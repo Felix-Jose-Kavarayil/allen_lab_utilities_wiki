@@ -1,6 +1,6 @@
 # Allen lab utilities
 
-This repository contains software that we are developing in the lab for improving processes. The repository includes shiny apps, a script to install most programs needed when installing a new computer, a script to add a computer to the database, etc.
+This repository contains software that we are developing in the lab to improve processes. The repository includes shiny apps, a script to install most programs needed when installing a new computer, a script to add a computer to the database, etc.
 
 ## List of exciting software
 
