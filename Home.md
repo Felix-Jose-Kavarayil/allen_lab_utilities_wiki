@@ -1,42 +1,10 @@
-# Welcome
+# Allen lab utilities
 
-Welcome to your wiki! This is the default page we've installed for your convenience. Go ahead and edit it.
+This repository contains software that we are developing in the lab for improving processes. The repository includes shiny apps, a script to install most programs needed when installing a new computer, a script to add a computer to the database, etc.
 
-## Wiki features
+## List of exciting software
 
-This wiki uses the [Markdown](http://daringfireball.net/projects/markdown/) syntax. The [MarkDownDemo tutorial](https://bitbucket.org/tutorials/markdowndemo) shows how various elements are rendered. The [Bitbucket documentation](https://confluence.atlassian.com/x/FA4zDQ) has more information about using a wiki.
-
-The wiki itself is actually a git repository, which means you can clone it, edit it locally/offline, add images or any other file type, and push it back to us. It will be live immediately.
-
-Go ahead and try:
-
-```
-$ git clone https://kevin_allen@bitbucket.org/kevin_allen/allen_lab_utilities.git/wiki
-```
-
-Wiki pages are normal files, with the .md extension. You can edit them locally, as well as creating new ones.
-
-## Syntax highlighting
-
-
-You can also highlight snippets of text (we use the excellent [Pygments][] library).
-
-[Pygments]: http://pygments.org/
-
-
-Here's an example of some Python code:
-
-```
-#!python
-
-def wiki_rocks(text):
-    formatter = lambda t: "funky"+t
-    return formatter(text)
-```
-
-
-You can check out the source of this page to see how that's done, and make sure to bookmark [the vast library of Pygment lexers][lexers], we accept the 'short name' or the 'mimetype' of anything in there.
-[lexers]: http://pygments.org/docs/lexers/
-
-
-Have fun!
+* **earlyProcessing.R**: a program to do spike extraction, make position data file (whd), etc.
+* **ktanPositrackTrial.sh**: a program to start and stop positrack and test the integrity of the files.
+* **newRecSession**: a shiny app to create a new recording session in a database.
+* **addNewComputer**: a script to configure a new computer in the lab.
