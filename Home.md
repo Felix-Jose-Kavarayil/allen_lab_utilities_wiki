@@ -13,3 +13,4 @@ This repository contains software that we are developing in the lab for improvin
 
 * **computerList**: This file contains the ip addresses of all computers in the lab.
 * **hardDrives**: Contains the name, location of the hard drives accessible through the network.
+* **auto.auto, auto.ext_drives, auto.data**: Files used by auto.mount
