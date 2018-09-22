@@ -14,3 +14,7 @@ This repository contains software that we are developing in the lab to improve p
 * **computerList**: This file contains the ip addresses of all computers in the lab.
 * **hardDrives**: Contains the name, location of the hard drives accessible through the network.
 * **auto.auto, auto.ext_drives, auto.data**: Files used by auto.mount
+
+## Database organization
+* [**Adding a new Ubuntu computer**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/edit/NewComputer)
+* [**Database description**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/edit/Database)
