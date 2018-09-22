@@ -4,7 +4,7 @@
 
 Before you begin, you need an ip address for the computer. In the dkfz, you can order one via the intranet.
 
-Go there [[https://intranet.dkfz-heidelberg.de/English/service-support/computer_support/itcf_userportal/Pages/default.aspx]]
+Go [here](https://intranet.dkfz-heidelberg.de/English/service-support/computer_support/itcf_userportal/Pages/default.aspx)
 
 And click on Network/IP address.
 
