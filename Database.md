@@ -11,6 +11,4 @@ One computer acts as a server for a few key directories. Here is the list of dir
 * `/adata/run/`: directory used to list task to do on the database
 
 
-
-
 ##
