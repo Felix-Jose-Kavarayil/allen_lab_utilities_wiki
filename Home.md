@@ -8,6 +8,7 @@ This repository contains software that we are developing in the lab to improve p
 * **ktanPositrackTrial.sh**: a program to start and stop positrack and test the integrity of the files.
 * **newRecSession**: a shiny app to create a new recording session in a database.
 * **addNewComputer**: a script to configure a new computer in the lab.
+* **updateDatabase**: a script to update the configuration on single computers when a new computer or hard drive is added.
 
 ## List of data kept in the repository
 
