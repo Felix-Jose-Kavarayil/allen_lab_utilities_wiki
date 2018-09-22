@@ -12,11 +12,13 @@ You will receive an email when your PC has been registered. Do not start the ins
 
 
 ## Install Ubuntu
-Download the latest LTS Ubuntu from the official website. Use the desktop for developer version. Burn the image on a bootable DVD.
+Download the latest LTS Ubuntu from the official website. Use the desktop developer version. Burn the image on a bootable DVD.
 
 Boot the computer from the DVD and follow the instructions.
 
-As computer name, use the Hostname given by the dkfz.
+Create a ```kevin``` user with a secure password.
+
+As a computer name, use the Hostname given by the dkfz.
 
 Reboot the computer, open a terminal.
 
@@ -63,15 +65,32 @@ sudo usermod -g data "USER"
 ```
 echo umask 0002 >> ~/.bashrc
 ```
-Log out and log back in.
-
+You will need to log out and log back in so that the change take effect.
 
 ## Reboot the computer
+Log in as ```kevin```
 
+## Install git 
+```
+sudo apt install git
+git config --global http.proxy www.inet.dkfz-heidelberg.de:80
+```
+
+## Get allen_lab_utilities and store git credentials
+```
+cd
+mkdir repo
+git config credential.helper store
+git clone https://kevin_allen@bitbucket.org/kevin_allen/allen_lab_utilities.git
+```
+
+## Create 
 Run newComputerSetup.sh
 ```
+cd ~/repo/allen_lab_utilities/src/shell_scripts
 sudo ./newComputerSetup.sh
 ```
+This should install several packages, set up automount to access the database, etc.
 
 
 Test if this worked by trying to visit a mounted directory.
@@ -93,34 +112,31 @@ sudo automount -f -v
 From another terminal, try to mount your file-systems by changing directories into the mountpoint.
 Check the output from the first terminal for clues as to why the mount failed or was not attempted. 
 
+## Install
 
 
 
-
-==== Install Rstudio ====
-Go to [[https://www.rstudio.com/products/rstudio/download/|rstudio website]]
+## Install Rstudio
+Go to [Rstudio](https://www.rstudio.com/products/rstudio/download/)
 Download and Ubuntu software center will take over.
 
-==== Proxy setting part 2 ====
+## Proxy setting part 2
 
-=== R studio ===
+###R studio
 
 Create a file called .Renviron in your home directory
-<code>emacs ~/.Renviron</code>
+```
+emacs ~/.Renviron
+```
 Add the following lines in the file.
-<code>http_proxy=http://www.inet.dkfz-heidelberg.de:80
-https_proxy=http://www.inet.dkfz-heidelberg.de:80</code>
+```
+http_proxy=http://www.inet.dkfz-heidelberg.de:80
+https_proxy=http://www.inet.dkfz-heidelberg.de:80
+```
 
 Restart Rstudio
 
-If it does not work, try to unselect Tools/Global Options.../Packages/Use secure method for HTTP
-
-=== git ===
-<code>git config --global http.proxy www.inet.dkfz-heidelberg.de:80</code>
-
-=== wget ===
-
-Should work with www.inet.dkfz-heidelberg.de:80 set from the gui.
+If you can't install.packages(), try to unselect Tools/Global Options.../Packages/Use secure method for HTTP
 
 
 ==== Install some software to process data ====
@@ -139,17 +155,6 @@ Install KlustaKwik
 sudo cp /software/KlustaKwik/KlustaKwik_64 /usr/local/bin/KlustaKwik
 </code>
 
-==== Allow KlustaKwikb4 and early_processing_b to run automatically ====
-Change the user's crontab
-<code>
-crontab -e
-</code>
-Paste the following in the crontab. The first line (#) is a comment. The groups of two letters correspond to the numbers below. You might want to change the mh column (first number, here 4) to a different number between 0 and 60, so that not all computers of the lab start their processes at the same time.
-<code>
-# mh hd dm my dw command
-4,14,24,34,44,54  * * * *  /usr/local/bin/KlustaKwikb4 >> /data/processing/clustering_log
-20  * * * *     /usr/local/bin/early_processing_b >> /data/processing/early_processing_log
-</code>
 
 ==== Modify you PATH variable ====
 
