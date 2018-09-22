@@ -12,7 +12,7 @@ You will receive an email when your PC has been registered. Do not start the ins
 
 
 ## Install Ubuntu
-Download Ubuntu from the official website. I selected the desktop for developer version with long-term support (LTS). Burn the image on a bootable DVD.
+Download the latest LTS Ubuntu from the official website. Use the desktop for developer version. Burn the image on a bootable DVD.
 
 Boot the computer from the DVD and follow the instructions.
 
