@@ -16,9 +16,9 @@ I will only distribute this repository within my lab for the moment. On each com
 
 ## List of data kept in the repository
 
-* **computerList**: This file contains the ip addresses of all computers in the lab.
-* **hardDrives**: Contains the name, location of the hard drives accessible through the network.
-* **auto.auto, auto.ext_drives, auto.data**: Files used by auto.mount
+* **data/computerList**: This file contains the ip addresses of all computers in the lab.
+* **data/auto/ext_drives**: Contains the name and location of the hard drives accessible through the network.
+* **data/auto/auto.master, data/auto/auto.ext_drives and data/auto/auto.data **: Additional files used by auto.mount
 
 ## Database organization
 * [**Adding a new Ubuntu computer**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/edit/NewComputer)
