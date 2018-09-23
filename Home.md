@@ -11,8 +11,8 @@ I will only distribute this repository within my lab for the moment. On each com
 * **newRecSession**: a shiny app to create a new recording session in a database.
 * **addNewComputer**: a script to configure a new computer in the lab.
 * **updateDatabase**: a script to update the configuration on single computers when a new computer or hard drive is added.
-* **KlustaKwik4b.sh**: a script to launch KlustaKwik2b when the resources are available.
-* **KlustaKwik2b.sh**: a script to launch Klustakwik and remove artifacts.
+* **KlustaKwikLauncher.sh**: a script to launch KlustaKwik.sh when the resources are available.
+* **KlustaKwik.sh**: a script to launch Klustakwik and remove artifacts.
 
 ## List of data kept in the repository
 
