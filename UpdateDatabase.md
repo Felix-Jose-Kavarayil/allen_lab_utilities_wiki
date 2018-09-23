@@ -27,4 +27,11 @@ The changes will now be available for the other computers.
 
 ## Update the other computers on the database
 
-When you first run ```newComputerSetup```, this will create a crontab job that will pull the latest version of allen_lab_utilities and run ```updateAutoMountExports.sh```. This is done once a day. If you want the changes to take effect immediately, you can always do it manually.
+When you run ```newComputerSetup``` on a computer, this creates a crontab job that pulls the latest version of allen_lab_utilities and runs ```updateAutoMountExports.sh```. This is done once a day. If you want the changes to take effect immediately, you can always do it manually.
+
+```
+cd ~/repo/allen_lab_utilities
+git pull
+cd src/shell_scripts
+sudo ./updateAutoMountExports.sh
+```
