@@ -1,19 +1,32 @@
-#Update database
+#Update database 
 
 This page describes how the database is updated when a computer or a hard drive is added or removed from the database.
+
+## On a single computer
+
+Before you start, get the latest state of the database
+```
+cd ~/repo/allen_lab_utilities
+git pull
+```
 
 There are only two files that are used to store the organization of the database:
 
 * allen_lab_utilities/data/auto/auto.ext_drives
 * allen_lab_utilities/data/computerList
 
-If a computer or hard drive is added or removed, do
-````
-cd ~/repo/allen_lab_utilities
-git pull
-````
-Edit the two files. 
+If you are adding a new computer, you will probably run ```newComputerSetup``` which will will add the new ip to ```allen_lab_utilities/data/computerList```. If a new drive is added, put it in ```allen_lab_utilities/data/auto/auto.ext_drives```. 
 
-```git push``` 
+Once you are done modifying these two files, commit and push the changes.
+```
+cd ~/repo/allen_lab_utilities
+git commit -a -m "adding a new computer (a230-pc55)"
+git push
+``` 
+The changes will now be available for the other computers.
+
+## Update the other computers on the database
+
+When you first run ```newComputerSetup```, this will create a crontab job that will pull the latest version of allen_lab_utilities and run ``` ```
 
 The script ```updateDatabase``` should be running from the crontab of each computer and will update the database structure of each computer automatically.
