@@ -15,7 +15,7 @@ There are only two files that are used to store the organization of the database
 * allen_lab_utilities/data/auto/auto.ext_drives
 * allen_lab_utilities/data/computerList
 
-If you are adding a new computer, you will probably run ```newComputerSetup``` which will will add the new ip to ```allen_lab_utilities/data/computerList```. If a new drive is added, put it in ```allen_lab_utilities/data/auto/auto.ext_drives```. 
+If you are adding a new computer, you will probably run ```newComputerSetup``` which will add the new ip to ```allen_lab_utilities/data/computerList```. If a new drive is added, put it in ```allen_lab_utilities/data/auto/auto.ext_drives```. 
 
 Once you are done modifying these two files, commit and push the changes.
 ```
