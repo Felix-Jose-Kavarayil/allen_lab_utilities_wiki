@@ -80,6 +80,7 @@ git config --global http.proxy www.inet.dkfz-heidelberg.de:80
 ```
 cd
 mkdir repo
+cd repo
 git config credential.helper store
 git clone https://kevin_allen@bitbucket.org/kevin_allen/allen_lab_utilities.git
 ```
@@ -148,11 +149,6 @@ cd repo
 git clone https://kevin_allen@bitbucket.org/kevin_allen/allen_mouse_electrophysiology.git
 cd allen_mouse_electrophysiology
 ./autogen.sh;./configure; make; sudo make install
-</code>
-
-Install KlustaKwik
-<code>
-sudo cp /software/KlustaKwik/KlustaKwik_64 /usr/local/bin/KlustaKwik
 </code>
 
 
