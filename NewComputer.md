@@ -34,26 +34,7 @@ You should have access to internet now. If this is not the case, you need to sor
 
 Go to system settings/network/network-proxy and add "www.inet.dkfz-heidelberg.de 80" to the http and https proxy line.
 
-## If you have a dedicated graphic card in the computer, install the proprietary driver for the card
 
-to check what graphic card you have.
-
-```
-lspci | grep -i --color 'vga\|3d\|2d'
-```
-
-If the card is a Nvidia or AMD card you should try to used the proprietary drivers.
-To find information about what driver is currently used you need to the device ID for the next query. 
-(The device ID are numbers at the beginning of the last output, in my case they are "01:00.0" but that can differ I suppose) 
-
-```
-sudo lspci -v -s 01:00.0
-```
-Look for "drivers" at the end of the output. If it states: "kernel driver in use: nouveau", try to install the proprietary driver. 
-
-### Install proprietary graphic drivers
-
-Go to Software & Updates under System Setting and select details in the dialogue box. Go to Hardware and/or additional drivers and select the tested proprietary drivers of your hardware.
 
 ## Create a group called data
 The group called data needs to have id = 501 and user needs this group as their main group
@@ -69,6 +50,7 @@ You will need to log out and log back in so that the change take effect.
 
 ## Reboot the computer
 Log in as ```kevin```
+
 
 ## Install git 
 ```
@@ -87,16 +69,9 @@ git config --global http.proxy www.inet.dkfz-heidelberg.de:80
 git config --global user.email "allen@uni-heidelberg.de"
 git config --global user.name "Kevin Allen"
 git config --global credential.helper /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
-cd ~/repo/allen_lab_utilities/
-
-```
-
-## Get allen_lab_utilities and store git credentials
-```
-cd
+cd ~
 mkdir repo
 cd repo
-git config credential.helper store
 git clone https://kevin_allen@bitbucket.org/kevin_allen/allen_lab_utilities.git
 ```
 
@@ -117,6 +92,48 @@ git push
 
 Test if this worked by trying to visit a mounted directory.
 ```cd /adata/projects```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## If you have a dedicated graphic card in the computer, install the proprietary driver for the card
+
+to check what graphic card you have.
+
+```
+lspci | grep -i --color 'vga\|3d\|2d'
+```
+
+If the card is a Nvidia or AMD card you should try to used the proprietary drivers.
+To find information about what driver is currently used you need to the device ID for the next query. 
+(The device ID are numbers at the beginning of the last output, in my case they are "01:00.0" but that can differ I suppose) 
+
+```
+sudo lspci -v -s 01:00.0
+```
+Look for "drivers" at the end of the output. If it states: "kernel driver in use: nouveau", try to install the proprietary driver. 
+
+### Install proprietary graphic drivers
+
+Go to Software & Updates under System Setting and select details in the dialogue box. Go to Hardware and/or additional drivers and select the tested proprietary drivers of your hardware.
 
 
 ## Debugging
