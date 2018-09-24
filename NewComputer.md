@@ -85,7 +85,7 @@ git config credential.helper store
 git clone https://kevin_allen@bitbucket.org/kevin_allen/allen_lab_utilities.git
 ```
 
-## Create 
+## Set auto mount and exportfs, update, etc.
 Run newComputerSetup.sh
 ```
 cd ~/repo/allen_lab_utilities/src/shell_scripts
@@ -93,6 +93,12 @@ sudo ./newComputerSetup.sh
 ```
 This should install several packages, set up automount to access the database, etc.
 
+## Make changes available to other computers
+```
+cd ~/repo/allen_lab_utilities/
+git commit -a -m "adding a computer"
+git push
+```
 
 Test if this worked by trying to visit a mounted directory.
 ```cd /adata/projects```
