@@ -74,6 +74,8 @@ Log in as ```kevin```
 ```
 sudo apt install git
 git config --global http.proxy www.inet.dkfz-heidelberg.de:80
+git config --global user.email "allen@uni-heidelberg.de"
+git config --global user.name "Kevin Allen"
 ```
 
 ## Get allen_lab_utilities and store git credentials
