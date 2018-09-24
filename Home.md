@@ -10,7 +10,8 @@ I will only distribute this repository within my lab for the moment. On each com
 * **ktanPositrackTrial.sh**: a program to start and stop positrack and test the integrity of the files.
 * **newRecSession**: a shiny app to create a new recording session in a database.
 * **addNewComputer**: a script to configure a new computer in the lab.
-* **updateAutoMountExports.sh**: a script to update the auto.mount and exportfs configuration from repo 
+* **updateAutoMountExports.sh**: a script to update the auto.mount and exportfs configuration from repo
+* **updateRepo**: a script to git pull some repository and install the programmes. 
 * **KlustaKwikLauncher.sh**: a script to launch KlustaKwik.sh when the resources are available.
 * **KlustaKwik.sh**: a script to launch Klustakwik and remove artifacts.
 
