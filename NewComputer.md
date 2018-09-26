@@ -161,19 +161,7 @@ Download and Ubuntu software center will take over.
 
 ## Proxy setting part 2
 
-###R studio
-
-Create a file called .Renviron in your home directory
-```
-emacs ~/.Renviron
-```
-Add the following lines in the file.
-```
-http_proxy=http://www.inet.dkfz-heidelberg.de:80
-https_proxy=http://www.inet.dkfz-heidelberg.de:80
-```
-
-Restart Rstudio
+### Rstudio
 
 If you can't install.packages(), try to unselect Tools/Global Options.../Packages/Use secure method for HTTP
 
