@@ -8,6 +8,8 @@ There is a script used to set up a computer from scratch. Just follow the instru
  
 This lab is only used in Kevin Allen's lab for the moment. On each computer, it needs a user called ```kevin``` with a strong password.
 
+We will need to find a solution for the backup of data.
+
 
 ## List of exciting software
 
