@@ -90,31 +90,26 @@ git commit -a -m "adding a computer"
 git push
 ```
 
+The next day, the other computers will have updated their configuration and the computer will be part of the database. 
+
+If you want to do it manually, log on each computer and do
+```
+cd repo/allen_lab_utilities/src/shell_scripts
+./updateRepos
+sudo ./updateAutoMountExports.sh
+```
+
 Test if this worked by trying to visit a mounted directory.
 ```cd /adata/projects```
 
 
+## Install Rstudio
+Go to [Rstudio](https://www.rstudio.com/products/rstudio/download/)
+Download and Ubuntu software center will take over.
+If you can't install.packages(), try to unselect Tools/Global Options.../Packages/Use secure method for HTTP
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## If you have a dedicated graphic card in the computer, install the proprietary driver for the card
+## Graphics card in the computer, install the proprietary driver for the card
 
 to check what graphic card you have.
 
@@ -151,32 +146,6 @@ sudo automount -f -v
 From another terminal, try to mount your file-systems by changing directories into the mountpoint.
 Check the output from the first terminal for clues as to why the mount failed or was not attempted. 
 
-## Install
-
-
-
-## Install Rstudio
-Go to [Rstudio](https://www.rstudio.com/products/rstudio/download/)
-Download and Ubuntu software center will take over.
-
-## Proxy setting part 2
-
-### Rstudio
-
-If you can't install.packages(), try to unselect Tools/Global Options.../Packages/Use secure method for HTTP
-
-
-==== Install some software to process data ====
-Install many scripts and c programs.
-<code>
-cd ~
-mkdir repo
-cd repo
-git clone https://kevin_allen@bitbucket.org/kevin_allen/allen_mouse_electrophysiology.git
-cd allen_mouse_electrophysiology
-./autogen.sh;./configure; make; sudo make install
-</code>
-
 
 ==== Modify you PATH variable ====
 
@@ -193,46 +162,26 @@ Once you are done modifying your local .profile file, load it to update to the n
 <code>
 source .profile
 </code>
-==== Allow people to ssh your computer ====
-<code>
-sudo apt-get install openssh-server
-sudo service ssh restart
-</code>
-==== Setting up the correct date and time ====
-
-In Setting-> Date and Time, set to manual.
-Then do the following
-<code>
-sudo apt-get install ntpdate
-</code>
-<code>
-sudo ntpdate ns.dkfz-heidelberg.de
-</code>
-or
-<code>
-sudo ntpdate ns2.dkfz-heidelberg.de
-</code>
 
 
-
-==== Automatic backup ====
+## Automatic backup
 
 If there are files stored on the new computer, it might be worth setting the automatic backup with the DKFZ facilities. The instructions are on this page  [[backup|Set the automatic backup on your computer]]. 
 
-==== Gain access to data on other computers ====
+## Gain access to data on other computers
 The workload for clustering is spread across the network of computers. For this to work, your computer needs to have access to hard drives attached to other computers. You need to add your ip address in the /etc/exports file of all other computers.
 To get the list of ip of all other computers
-<code>
+```
 ssh hm001-pc005 -l kevin
 cat /etc/exports | grep processing
-</code>
+```
 
 Leave the list in one terminal and use a second terminal to ssh into all these computers. You need to make sure the ip address of your new computer is in the /etc/exports of all the other computers. Add your ip at the end of each line in the file with (wr) following it. Then run exportfs -av. So for each id, do the following. If there is no /etc/exports file on one computer, there is nothing to do.
-<code>
+```
 ssh compid -l kevin
 su
 emacs /etc/exports
 exportfs -av
 exit
 exit
-</code>
+```
