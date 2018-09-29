@@ -1,14 +1,18 @@
 # Allen lab utilities
 
-This repository contains software that we are developing in the lab to improve processes. The repository includes shiny apps, a script to install most programs needed when installing a new computer, a script to add a computer to the database, etc.
+This repository contains software that takes care of the database and some automatic steps of data analysis. 
 
-I will only distribute this repository within my lab for the moment. On each computer, I will have a user called ```kevin``` with a strong password. git will be able to pull the repository from this account only.
+The repository includes a list of computer and hard drives that are part of the network used for data analysis.
+
+There is a script used to set up a computer from scratch. Just follow the instruction for adding a new computer in this wiki. The computer will be automatically updated when this repository changes. So there is no need to go and modify all computers when someone adds a computer or a hard drive.
+ 
+This lab is only used in Kevin Allen's lab for the moment. On each computer, it needs a user called ```kevin``` with a strong password.
+
 
 ## List of exciting software
 
 * **earlyProcessing.R**: a program to do spike extraction, make position data file (whd), and send spike to clustering.
 * **ktanPositrackTrial.sh**: a program to start and stop positrack and test the integrity of the files.
-* **newRecSession**: a shiny app to create a new recording session in a database.
 * **addNewComputer**: a script to configure a new computer in the lab.
 * **updateAutoMountExports.sh**: a script to update the auto.mount and exportfs configuration from repo
 * **updateRepo**: a script to git pull some repository and install the programmes. 
