@@ -74,6 +74,7 @@ mkdir repo
 cd repo
 git clone https://kevin_allen@bitbucket.org/kevin_allen/allen_lab_utilities.git
 ```
+This will save the credentials and you no longer need to provide a password for the repositories on bitbucket.
 
 ## Set auto mount and exportfs, update, etc.
 Run newComputerSetup.sh
