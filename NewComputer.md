@@ -84,6 +84,9 @@ sudo ./newComputerSetup.sh
 ```
 This should install several packages, set up automount to access the database, etc.
 
+You can edit data/maxKlustakwikProcesses manually to set the correct number of Klustakwik processes you want to run on the computer.
+
+
 ## Make changes available to other computers
 ```
 cd ~/repo/allen_lab_utilities/
