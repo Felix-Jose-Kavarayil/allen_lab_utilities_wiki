@@ -1,6 +1,11 @@
 # Problems
 
-## exportfs fails at boot time
+## Current problems
+
+
+## Solved problems
+
+### exportfs fails at boot time
 
 After reboot, the computer does not export correctly. You can see the problem by running
 ```
@@ -12,8 +17,5 @@ The nfs server is running. The cause is mostly that exportfs is run before a DNS
 ```
 systemd-resolve --status
 ```
-### Possible solutions
-
-We try to run exportfsReboot.sh as a root cron tab job at reboot.
-This seems to have patched the problem.
-I am adding the fix to newComputerSetup.sh.
+I added exportfsReboot.sh to root crontab job at reboot.
+This will be added by newComputerSetup.sh.
