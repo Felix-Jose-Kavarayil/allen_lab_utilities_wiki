@@ -16,3 +16,4 @@ systemd-resolve --status
 
 We try to run exportfsReboot.sh as a root cron tab job at reboot.
 This seems to have patched the problem.
+I am adding the fix to newComputerSetup.sh.
