@@ -52,7 +52,21 @@ You will need to log out and log back in so that the change take effect.
 Log in as ```kevin```
 
 
-## Install git 
+## apt-get proxy
+
+Create or edit /etc/apt/apt.conf
+```
+sudo gedit /etc/apt/apt.conf
+```
+Add this line
+```
+Acquire::http::proxy "http://www.inet.dkfz-heidelberg.de:80/";
+```
+
+
+## Install git
+
+
 ```
 sudo apt install git
 ```
