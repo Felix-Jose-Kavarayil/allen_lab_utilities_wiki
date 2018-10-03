@@ -12,3 +12,6 @@ The nfs server is running. The cause is mostly that exportfs is run before a DNS
 ```
 systemd-resolve --status
 ```
+### Possible solutions
+
+We try to run exportfsReboot.sh as a root cron tab job at reboot.
