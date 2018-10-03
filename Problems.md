@@ -15,3 +15,4 @@ systemd-resolve --status
 ### Possible solutions
 
 We try to run exportfsReboot.sh as a root cron tab job at reboot.
+This seems to have patched the problem.
