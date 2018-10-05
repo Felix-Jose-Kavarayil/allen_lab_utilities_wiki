@@ -79,6 +79,11 @@ git config --global http.proxy www.inet.dkfz-heidelberg.de:80
 git config --global user.email "allen@uni-heidelberg.de"
 git config --global user.name "Kevin Allen"
 git config --global credential.helper /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
+```
+Next time you enter your password, it will save it for later.
+
+## Get two repositories
+```
 cd ~
 mkdir repo
 cd repo
@@ -91,7 +96,6 @@ make
 sudo make install
 cd ..
 ```
-This will save the credentials and you no longer need to provide a password for the repositories on bitbucket.
 
 ## Set auto mount and exportfs, update, etc.
 Run newComputerSetup.sh
