@@ -34,8 +34,6 @@ You should have access to internet now. If this is not the case, you need to sor
 
 Go to system settings/network/network-proxy and add "www.inet.dkfz-heidelberg.de 80" to the http and https proxy line.
 
-
-
 ## Create a group called data
 The group called data needs to have id = 501 and user needs this group as their main group
 ```
@@ -63,9 +61,7 @@ Add this line
 Acquire::http::proxy "http://www.inet.dkfz-heidelberg.de:80/";
 ```
 
-
 ## Install git
-
 
 ```
 sudo apt install git
@@ -87,6 +83,13 @@ cd ~
 mkdir repo
 cd repo
 git clone https://kevin_allen@bitbucket.org/kevin_allen/allen_lab_utilities.git
+git clone https://kevin_allen@bitbucket.org/kevin_allen/allen_mouse_electrophysiology.git
+cd allen_mouse_electrophysiology
+./autogen
+./configure
+make
+sudo make install
+cd ..
 ```
 This will save the credentials and you no longer need to provide a password for the repositories on bitbucket.
 
