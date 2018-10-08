@@ -82,7 +82,7 @@ git config --global credential.helper /usr/share/doc/git/contrib/credential/gnom
 ```
 Next time you enter your password, it will save it for later.
 
-## Get two repositories
+## Get a few repositories
 ```
 cd ~
 mkdir repo
