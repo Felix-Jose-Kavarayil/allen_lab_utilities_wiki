@@ -96,6 +96,10 @@ cd allen_mouse_electrophysiology
 make
 sudo make install
 cd ..
+cd ~/repo
+R CMD build relectro
+R CMD INSTALL relectro
+
 ```
 
 ## Set auto mount and exportfs, update, etc.
