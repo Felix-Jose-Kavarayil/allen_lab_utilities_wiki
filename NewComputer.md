@@ -108,7 +108,7 @@ You can edit data/maxKlustakwikProcesses manually to set the correct number of K
 ```
 cd ~/repo
 cd allen_mouse_electrophysiology
-./autogen
+./autogen.sh
 ./configure
 make
 sudo make install
