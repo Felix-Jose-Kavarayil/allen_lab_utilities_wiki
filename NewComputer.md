@@ -115,10 +115,11 @@ sudo make install
 cd ..
 ```
 ## Install relectro
+```
 cd ~/repo
 R CMD build relectro
 R CMD INSTALL relectro
-
+```
 
 ## Make changes available to other computers
 ```
