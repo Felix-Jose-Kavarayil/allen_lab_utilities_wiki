@@ -64,7 +64,8 @@ Acquire::http::proxy "http://www.inet.dkfz-heidelberg.de:80/";
 ## Install git
 
 ```
-sudo apt install git
+sudo apt-get update
+sudo apt-get install git-core
 ```
 
 ## Set git credential to pull from bitbucket without password
