@@ -92,16 +92,6 @@ cd repo
 git clone https://kevin_allen@bitbucket.org/kevin_allen/allen_lab_utilities.git
 git clone https://kevin_allen@bitbucket.org/kevin_allen/allen_mouse_electrophysiology.git
 git clone https://kevin_allen@bitbucket.org/kevin_allen/relectro.git
-cd allen_mouse_electrophysiology
-./autogen
-./configure
-make
-sudo make install
-cd ..
-cd ~/repo
-R CMD build relectro
-R CMD INSTALL relectro
-
 ```
 
 ## Set auto mount and exportfs, update, etc.
@@ -113,6 +103,21 @@ sudo ./newComputerSetup.sh
 This should install several packages, set up automount to access the database, etc.
 
 You can edit data/maxKlustakwikProcesses manually to set the correct number of Klustakwik processes you want to run on the computer.
+
+## Install allen_mouse_electrophysiology
+```
+cd ~/repo
+cd allen_mouse_electrophysiology
+./autogen
+./configure
+make
+sudo make install
+cd ..
+```
+## Install relectro
+cd ~/repo
+R CMD build relectro
+R CMD INSTALL relectro
 
 
 ## Make changes available to other computers
