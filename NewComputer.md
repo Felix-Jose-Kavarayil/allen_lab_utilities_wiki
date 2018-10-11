@@ -61,11 +61,12 @@ Add this line
 Acquire::http::proxy "http://www.inet.dkfz-heidelberg.de:80/";
 ```
 
-## Install git
+## Install git and automake
 
 ```
 sudo apt-get update
 sudo apt-get install git-core
+sudo apt-get install automake
 ```
 
 ## Set git credential to pull from bitbucket without password
