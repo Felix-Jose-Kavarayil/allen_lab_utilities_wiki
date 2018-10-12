@@ -147,6 +147,14 @@ Download and Ubuntu software center will take over.
 If you can't install.packages(), try to unselect Tools/Global Options.../Packages/Use secure method for HTTP
 
 
+## ssh to the computer without a password
+
+If you plan to ssh often a computer, you might want to give it a ssh key so you don't have to give a password every time you log in.
+```
+ssh-keygen
+ssh-copy-id kevin@a230-pc49
+```
+
 ## Graphics card in the computer, install the proprietary driver for the card
 
 to check what graphic card you have.
