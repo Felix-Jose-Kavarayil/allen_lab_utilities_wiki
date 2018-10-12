@@ -201,7 +201,15 @@ Once you are done modifying your local .profile file, load it to update to the n
 source .profile
 </code>
 
+## Arduino
 
+To use the arduino software, I needed to install java 8 and set it as the default java version
+```
+sudo apt install openjdk-8-jdk
+java --version
+sudo update-alternatives --config java
+
+```
 ## Automatic backup
 
 If there are files stored on the new computer, it might be worth setting the automatic backup with the DKFZ facilities. The instructions are on this page  [[backup|Set the automatic backup on your computer]]. 
