@@ -2,7 +2,9 @@
 
 ## Current problems
 
-Install all R packages as user and not superuser. Otherwise we can't update the packages later own because of permission problems
+Install all R packages as user and not superuser. Otherwise we can't update the packages later own because of permission problems.
+
+Fix: sudo chown kevin -R /home/kevin/R/x86_64-pc-linux-gnu-library/3.4
 
 
 ## Solved problems
