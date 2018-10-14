@@ -2,6 +2,8 @@
 
 ## Current problems
 
+Install all R packages as user and not superuser. Otherwise we can't update the packages later own because of permission problems
+
 
 ## Solved problems
 
