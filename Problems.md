@@ -2,10 +2,16 @@
 
 ## Current problems
 
+### Installation of R packages
 Install all R packages as user and not superuser. Otherwise we can't update the packages later own because of permission problems.
 
 Fix: sudo chown kevin -R /home/kevin/R/x86_64-pc-linux-gnu-library/3.4
 
+### Time of computer drifts
+
+a230-pc51 suddenly 18:43 when it is 8:43.
+
+Fix: run ```sudo ntpdate ns.dkfz-heidelberg.de```
 
 ## Solved problems
 
