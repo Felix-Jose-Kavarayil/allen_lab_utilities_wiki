@@ -58,7 +58,9 @@ sudo gedit /etc/apt/apt.conf
 ```
 Add this line
 ```
-Acquire::http::proxy "http://www.inet.dkfz-heidelberg.de:80/";
+Acquire::http::proxy "http://www-int2.inet.dkfz-heidelberg.de:80/";
+Acquire::https::proxy "https://www-int2.inet.dkfz-heidelberg.de:80/";
+Acquire::ftp::proxy "ftp://www-int2.inet.dkfz-heidelberg.de:80/";
 ```
 
 ## Install git and automake
