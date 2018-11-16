@@ -3,7 +3,7 @@
 ## Structure
 The database is made up of hard drives located on computers that are part of the database. The list of computer is in the file `data/computerList`. The list of hard drives is in `data/auto/auto.ext_dirves`. So the data are distributed on several computers, but access is possible from the other computers of the network.
 
-One computer acts as a server for a few key directories. Here is the list of directories
+One computer acts as a server for a few key directories. You can find which one it is by looking into the file `/data/auto/auto.data`. Here is the list of directories
 
 * `/adata/electro/`: link to all mice that are in the database
 * `/adata/histo/`: histology of all mice
