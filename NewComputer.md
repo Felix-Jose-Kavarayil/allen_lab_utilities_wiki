@@ -32,7 +32,7 @@ You should have access to internet now. If this is not the case, you need to sor
 
 ### General via gui
 
-Go to system settings/network/network-proxy and add "www.inet.dkfz-heidelberg.de 80" to the http and https proxy line.
+Go to system settings/network/network-proxy and add ```www-int2.inet.dkfz-heidelberg.de 80``` to the http and https proxy line.
 
 ## Create a group called data
 The group called data needs to have id = 501 and user needs this group as their main group
