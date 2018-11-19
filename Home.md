@@ -29,6 +29,7 @@ We will need to find a solution for the backup of data.
 
 ## Database organization
 * [**Adding a new Ubuntu computer**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/edit/NewComputer)
+* [**Add new user**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/edit/NewUser)
 * [**Database description**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/edit/Database)
 * [**Updating the database**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/edit/UpdateDatabase)
 * [**Problems**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/edit/Problems)
