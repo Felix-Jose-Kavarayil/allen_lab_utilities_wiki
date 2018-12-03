@@ -2,7 +2,7 @@
 
 ## If the hard drive is new
 
-This section is for new hard drives containing no data. If your drive already has data on it, following the instructions below will destroy your data. 
+This section is for new hard drives containing no data. If your drive already has data on it, following the instructions below will destroy your data. Instead, go to the "For all drives" section
 
 ### Find a name for your drive
 
@@ -50,6 +50,13 @@ Format the new partition and label it
 In the code below, replace ```/dev/sd?``` by what you used above and ```d?``` is what you identified in the first section. THIS STEP ERASES WHATEVER HAS BEEN ON THIS PARTITION BEFORE!
 
 ```mkfs.ext4 /dev/sd?1 -L /d?```
+
+
+
+## For all drives
+
+If you have a hard drive with data, you start here.
+
 
 Find the id of the partition
 
