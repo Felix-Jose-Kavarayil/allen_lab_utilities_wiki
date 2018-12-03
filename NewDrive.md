@@ -67,7 +67,7 @@ What you need is the UUID of your partition.
 
 For example
 
-```mkdir /d36```
+```sudo mkdir /d36```
 
 ### Edit your fstab
 
@@ -101,7 +101,7 @@ The official list of hard drives is in a file of the allen_lab_utilities reposit
 
 Get the latest version
 ```
-cd repo/allen_lab_utilities
+cd ~/repo/allen_lab_utilities
 git pull
 ```
 
