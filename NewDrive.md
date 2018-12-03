@@ -57,20 +57,19 @@ In the code below, replace ```/dev/sd?``` by what you used above and ```d?``` is
 
 If you have a hard drive with data, you start here.
 
-
-Find the id of the partition
+### ID of the partition
 
 ```sudo blkid```
 
 What you need is the UUID of your partition.
 
-Create mounting point for the drive
+### Create a mounting point for the drive
 
 For example
 
 ```mkdir /d36```
 
-Edit your fstab
+### Edit your fstab
 
 ```sudo emacs /etc/fstab```
 ```
@@ -83,20 +82,43 @@ UUID=70d64b22-e443-4a43-ab34-4faf0d8a8823 /d15			  ext4 	  defaults 	  0 0
 UUID=1a40cffd-77ad-4a58-b764-8b37417bf608 /d5			  ext3	  defaults	  0 0
 UUID=96520c43-0086-4e14-9db7-96e4a1e2863e /d46			  ext4	  defaults	  0 0
 ```
+### Try to mount the drive
 
-Mount all drives with in your fstab
+If your drive is already mounted, umount it.
+
+You need to find the mounting point and use ```sudo umount mountingPoint```, for example:
+
+```sudo umount /media/kevin/_d31```
+
+Then mount everything that is listed in /etc/fstab
 
 ```sudo mount -a```
 
 
-Add your drive to the hard drive list on the wiki page
+### Add the drive to the database. 
 
-Hard drive list
-Making your drive available from other computer
+The official list of hard drives is in a file of the allen_lab_utilities repository. Add your drive to it.
 
-Add the drive to /etc/exports
+Get the latest version
+```
+cd repo/allen_lab_utilities
+git pull
+```
 
-echo "/d16 hm001-pc009.inet.dkfz-heidelberg.de(rw) hm001-pc006.inet.dkfz-heidelberg.de(rw) hm001-pc24.inet.dkfz-heidelberg.de(rw) hm001-ps023.inet.dkfz-heidelberg.de(rw) hm001-pc008.inet.dkfz-heidelberg.de(rw) hm001-pc029.inet.dkfz-heidelberg.de(rw) hc001-pc030.inet.dkfz-heidelberg.de(rw) hm001-pc031.inet.dkfz-heidelberg.de(rw) hm001-pc034.inet.dkfz-heidelberg.de(rw) hm001-pc035.inet.dkfz-heidelberg.de(rw) a230-pc02.inet.dkfz-heidelberg.de(rw) a230-pc08.inet.dkfz-heidelberg.de(rw) a230-pc12.inet.dkfz-heidelberg.de(rw) hm001-pc032.inet.dkfz-heidelberg.de(rw) a230-pc012.inet.dkfz-heidelberg.de(rw)" >> /etc/exports
+Edit and save the file
+
+```emacs ~/repo/allen_lab_utilities/data/auto/auto.ext_drives```
+
+Update the repository
+
+```
+git commit -a -m "adding hard drive d31"
+git push
+```
+
+
+
+
 
 Also add the drive in the list of automatically mounted external drives of other computers. If you want your data to be clustered properly, you need to include every computer running KlustaKwik. You can get the list of ip from /etc/exports. Ssh the computers in turn and do
 
