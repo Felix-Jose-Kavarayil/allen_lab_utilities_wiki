@@ -28,9 +28,9 @@ We will need to find a solution for the backup of data.
 * **data/auto/auto.master, data/auto/auto.ext_drives and data/auto/auto.data **: Additional files used by auto.mount
 
 ## Database organization
-* [**Adding a new Ubuntu computer**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/edit/NewComputer)
-* [**Adding a new hard drive**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/edit/NewDrive)
-* [**Add new user**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/edit/NewUser)
-* [**Database description**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/edit/Database)
-* [**Updating the database**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/edit/UpdateDatabase)
-* [**Problems**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/edit/Problems)
+* [**Adding a new Ubuntu computer**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/NewComputer)
+* [**Adding a new hard drive**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/NewDrive)
+* [**Add new user**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/NewUser)
+* [**Database description**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/Database)
+* [**Updating the database**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/UpdateDatabase)
+* [**Problems**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/Problems)
