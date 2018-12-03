@@ -116,57 +116,29 @@ git commit -a -m "adding hard drive d31"
 git push
 ```
 
+### Apply the changes locally
 
+On the computer on which the drive is installed. Run
 
+```
+cd ~/repo/allen_lab_utilities/src/shell_scripts/
+sudo ./updateAutoMountExports.sh
+```
 
+### Test that the drive is automounted in /ext_drives/
 
-Also add the drive in the list of automatically mounted external drives of other computers. If you want your data to be clustered properly, you need to include every computer running KlustaKwik. You can get the list of ip from /etc/exports. Ssh the computers in turn and do
+```
+cd /ext_drives/d31
+```
 
-su -
-emacs /etc/auto.ext_drives
+### Apply changes to other computers
 
-Back onto the computer connected to the new hard drive, run
+Normally, this should be done automatically overnight.
 
-exportfs -ra
+```ssh``` onto another computer and run
 
-Get permissions right and make the directory tree on the drive
-
-Make sure that the hard drive is mounted before doing all this. Visiting /ext_drives/d36 should do the trick.
-
-su
-cd /ext_drives/d36 
-df -h
-
-You should now see your hard drive being mounted in the root partition. Something like
-
-/dev/sdg1                                           2.7T  2.3T  336G  88% /d23
-
-If this not the case, you need to solve this.
-
-cd /
-chown kevin d36
-chgrp data d36
-chmod g+wrx d36
-exit
-cd /ext_drives/d36
-mkdir data
-cd data
-mkdir bindata
-mkdir processing
-
-Add drive to early processing list
-
-emacs /data/processing/early_processing_drives
-
-Make sure that the new drive is backed up every night
-
-Add your drive to the DOMain line in the configuration file of the dsmc backup system.
-
-su
-emacs /opt/tivoli/tsm/client/ba/bin/dsm.opt
-
-On the next day, check that your hard drive is backed up.
-
-su
-dsmc q fi
-exit
+```
+cd ~/repo/allen_lab_utilities/src/shell_scripts/
+./updateRepos.sh
+sudo ./updateAutoMountExports.sh
+```
