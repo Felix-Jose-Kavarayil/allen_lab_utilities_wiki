@@ -1,1 +1,143 @@
 #New Hard Drive
+
+## If the hard drive is new
+
+This section is for new hard drives containing no data. If your drive already has data on it, following the instructions below will destroy your data. 
+
+### Find a name for your drive
+
+By convention, we label our drive d? where ? is a incrementing counter. To know what is the next number to be used do
+
+cat /etc/auto.ext_drives
+
+### Create a partition on the drive
+
+Identify your drive on your computer. This is best done by using ```df -h```. Make sure the drive is not plugged in your computer. Run
+
+```df -h```
+
+Plug in your hard drive and run
+
+```df -h```
+
+The drive that was not there the first time and is there this time is your hard drive. If the two outputs are the same, this means your dirve is not mounted by the computer and you can use dmesg to find your drive.
+
+What you are looking for is something like /dev/sd?, where ? is a letter.
+
+You can also try with
+
+dmesg
+
+.
+
+It is very important that you do not make a mistake at the previous step because you are about to erase what is on whatever drive you identified as your new hard drive. m(
+
+If this doesn't work either ^^, try as root to find out what name the new block device file (generated at USB plug-in) has:
+
+fdisk -l
+
+Use fdisk to delete any old partition on the drive and create a new primary partition.
+
+su
+umount /dev/sd?1
+fdisk /dev/sd? 
+m
+d
+n
+p
+1
+w
+
+Format the new partition and label it
+
+In the code below, replace /dev/sd? by what you used above and d? is what you identified in the first section. THIS STEP ERASES WHATEVER HAS BEEN ON THIS PARTITION BEFORE!
+
+mkfs.ext4 /dev/sd?1 -L /d?
+
+Find the id of the partition
+
+sudo blkid
+
+What you need is the UUID of your partition.
+Create mounting point for the drive
+
+For example
+
+mkdir /d36
+
+Edit your fstab
+
+sudo emacs /etc/fstab
+
+UUID=3b06fdcd-29aa-49f4-b8d5-cefe4c989bd2 /                       ext4    defaults        1 1
+UUID=74bb95da-1cc8-4ac8-acc6-b7135b2927e3 /boot                   ext4    defaults        1 2
+UUID=85f9baec-d489-4ca8-b540-85df8c98eb22 /home                   ext4    defaults        1 2
+UUID=f0b09312-5809-43aa-a19b-9fc02d2cf7d5 swap                    swap    defaults        0 0
+UUID=1c90a999-b3a0-4423-ae5a-0cf2eb049d42 /d14			  ext4	  defaults	  0 0
+UUID=70d64b22-e443-4a43-ab34-4faf0d8a8823 /d15			  ext4 	  defaults 	  0 0
+UUID=1a40cffd-77ad-4a58-b764-8b37417bf608 /d5			  ext3	  defaults	  0 0
+UUID=96520c43-0086-4e14-9db7-96e4a1e2863e /d46			  ext4	  defaults	  0 0
+
+Mount all drives with in your fstab
+
+sudo mount -a
+
+Add your drive to the hard drive list on the wiki page
+
+Hard drive list
+Making your drive available from other computer
+
+Add the drive to /etc/exports
+
+echo "/d16 hm001-pc009.inet.dkfz-heidelberg.de(rw) hm001-pc006.inet.dkfz-heidelberg.de(rw) hm001-pc24.inet.dkfz-heidelberg.de(rw) hm001-ps023.inet.dkfz-heidelberg.de(rw) hm001-pc008.inet.dkfz-heidelberg.de(rw) hm001-pc029.inet.dkfz-heidelberg.de(rw) hc001-pc030.inet.dkfz-heidelberg.de(rw) hm001-pc031.inet.dkfz-heidelberg.de(rw) hm001-pc034.inet.dkfz-heidelberg.de(rw) hm001-pc035.inet.dkfz-heidelberg.de(rw) a230-pc02.inet.dkfz-heidelberg.de(rw) a230-pc08.inet.dkfz-heidelberg.de(rw) a230-pc12.inet.dkfz-heidelberg.de(rw) hm001-pc032.inet.dkfz-heidelberg.de(rw) a230-pc012.inet.dkfz-heidelberg.de(rw)" >> /etc/exports
+
+Also add the drive in the list of automatically mounted external drives of other computers. If you want your data to be clustered properly, you need to include every computer running KlustaKwik. You can get the list of ip from /etc/exports. Ssh the computers in turn and do
+
+su -
+emacs /etc/auto.ext_drives
+
+Back onto the computer connected to the new hard drive, run
+
+exportfs -ra
+
+Get permissions right and make the directory tree on the drive
+
+Make sure that the hard drive is mounted before doing all this. Visiting /ext_drives/d36 should do the trick.
+
+su
+cd /ext_drives/d36 
+df -h
+
+You should now see your hard drive being mounted in the root partition. Something like
+
+/dev/sdg1                                           2.7T  2.3T  336G  88% /d23
+
+If this not the case, you need to solve this.
+
+cd /
+chown kevin d36
+chgrp data d36
+chmod g+wrx d36
+exit
+cd /ext_drives/d36
+mkdir data
+cd data
+mkdir bindata
+mkdir processing
+
+Add drive to early processing list
+
+emacs /data/processing/early_processing_drives
+
+Make sure that the new drive is backed up every night
+
+Add your drive to the DOMain line in the configuration file of the dsmc backup system.
+
+su
+emacs /opt/tivoli/tsm/client/ba/bin/dsm.opt
+
+On the next day, check that your hard drive is backed up.
+
+su
+dsmc q fi
+exit
