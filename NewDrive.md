@@ -6,7 +6,7 @@ This section is for new hard drives containing no data. If your drive already ha
 
 ### Find a name for your drive
 
-By convention, we label our drive d? where ? is a incrementing counter. To know what is the next number to be used do
+By convention, we label our drive d? where ? is an incrementing counter. To know what is the next number to be used do
 
 cat /etc/auto.ext_drives
 
@@ -20,24 +20,20 @@ Plug in your hard drive and run
 
 ```df -h```
 
-The drive that was not there the first time and is there this time is your hard drive. If the two outputs are the same, this means your dirve is not mounted by the computer and you can use dmesg to find your drive.
+The drive that was not there the first time and is there this time is your hard drive. If the two outputs are the same, this means your drive is not mounted by the computer and you can use ```dmesg``` to find your drive.
 
-What you are looking for is something like /dev/sd?, where ? is a letter.
+What you are looking for is something like ```/dev/sd?```, where ```?``` is a letter.
 
-You can also try with
+You can also try with ```dmesg```.
 
-dmesg
-
-.
-
-It is very important that you do not make a mistake at the previous step because you are about to erase what is on whatever drive you identified as your new hard drive. m(
+It is very important that you do not make a mistake at the previous step because you are about to erase what is on whatever drive you identified as your new hard drive.
 
 If this doesn't work either ^^, try as root to find out what name the new block device file (generated at USB plug-in) has:
 
-fdisk -l
+```fdisk -l```
 
 Use fdisk to delete any old partition on the drive and create a new primary partition.
-
+```
 su
 umount /dev/sd?1
 fdisk /dev/sd? 
@@ -47,28 +43,30 @@ n
 p
 1
 w
+```
 
 Format the new partition and label it
 
-In the code below, replace /dev/sd? by what you used above and d? is what you identified in the first section. THIS STEP ERASES WHATEVER HAS BEEN ON THIS PARTITION BEFORE!
+In the code below, replace ```/dev/sd?``` by what you used above and ```d?``` is what you identified in the first section. THIS STEP ERASES WHATEVER HAS BEEN ON THIS PARTITION BEFORE!
 
-mkfs.ext4 /dev/sd?1 -L /d?
+```mkfs.ext4 /dev/sd?1 -L /d?```
 
 Find the id of the partition
 
-sudo blkid
+```sudo blkid```
 
 What you need is the UUID of your partition.
+
 Create mounting point for the drive
 
 For example
 
-mkdir /d36
+```mkdir /d36```
 
 Edit your fstab
 
-sudo emacs /etc/fstab
-
+```sudo emacs /etc/fstab```
+```
 UUID=3b06fdcd-29aa-49f4-b8d5-cefe4c989bd2 /                       ext4    defaults        1 1
 UUID=74bb95da-1cc8-4ac8-acc6-b7135b2927e3 /boot                   ext4    defaults        1 2
 UUID=85f9baec-d489-4ca8-b540-85df8c98eb22 /home                   ext4    defaults        1 2
@@ -77,10 +75,12 @@ UUID=1c90a999-b3a0-4423-ae5a-0cf2eb049d42 /d14			  ext4	  defaults	  0 0
 UUID=70d64b22-e443-4a43-ab34-4faf0d8a8823 /d15			  ext4 	  defaults 	  0 0
 UUID=1a40cffd-77ad-4a58-b764-8b37417bf608 /d5			  ext3	  defaults	  0 0
 UUID=96520c43-0086-4e14-9db7-96e4a1e2863e /d46			  ext4	  defaults	  0 0
+```
 
 Mount all drives with in your fstab
 
-sudo mount -a
+```sudo mount -a```
+
 
 Add your drive to the hard drive list on the wiki page
 
