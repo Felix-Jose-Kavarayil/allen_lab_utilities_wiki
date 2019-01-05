@@ -156,6 +156,11 @@ If you plan to ssh often a computer, you might want to give it a ssh key so you 
 ssh-keygen
 ssh-copy-id kevin@a230-pc49
 ```
+## c++ mode in emacs for .cu files
+Add the following to your ~/.emacs file
+```
+(add-to-list 'auto-mode-alist '("\\.cu\\'" . c++-mode))
+```
 
 ## Graphics card in the computer, install the proprietary driver for the card
 
