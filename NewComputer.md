@@ -139,6 +139,12 @@ sudo ./updateAutoMountExports.sh
 Test if this worked by trying to visit a mounted directory.
 ```cd /adata/projects```
 
+## Adjust the crontab
+
+You might want to remove some entries from the crontab depending on the use of the new computer. You can comment out a line with ```#```
+
+```crontab -e```
+
 
 ## Install Rstudio
 Go to [Rstudio](https://www.rstudio.com/products/rstudio/download/)
