@@ -148,7 +148,15 @@ You might want to remove some entries from the crontab depending on the use of t
 
 ## Install Rstudio
 Go to [Rstudio](https://www.rstudio.com/products/rstudio/download/)
-Download and Ubuntu software center will take over.
+Download the latest version for Ubuntu.
+Then in a terminal:
+
+```
+sudo apt install gdebi-core
+sudo gdebi rstudio-xenial-1.1.463-amd64.deb # or whathever the file name is
+```
+
+
 If you can't install.packages(), try to unselect Tools/Global Options.../Packages/Use secure method for HTTP
 
 
