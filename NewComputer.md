@@ -73,18 +73,15 @@ sudo apt-get install automake
 
 ## Set git credential to pull from bitbucket without password
 
-This will change ~/.gitconfig.
 
 ```
-sudo apt install libgnome-keyring-dev
-cd /usr/share/doc/git/contrib/credential/gnome-keyring
-sudo make
 git config --global http.proxy www.inet.dkfz-heidelberg.de:80
 git config --global user.email "allen@uni-heidelberg.de"
 git config --global user.name "Kevin Allen"
-git config --global credential.helper /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
+git config --global credential.helper store
 ```
-Next time you enter your password, it will save it for later.
+Next time you enter your password, it will save in a file in your home directory and will be used later.
+Make sure only you have access to this file.
 
 ## Get a few repositories
 ```
