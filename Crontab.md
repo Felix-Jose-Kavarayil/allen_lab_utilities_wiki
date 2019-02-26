@@ -1,6 +1,6 @@
 # Crontab jobs #
 
-The crontab is used to automatically run a program at a specified time or date. 
+The crontab is used to automatically run a program at a specified time or date. Some jobs are added there automatically when you install a new computer. 
 
 To edit: ```crontab -e```
 
