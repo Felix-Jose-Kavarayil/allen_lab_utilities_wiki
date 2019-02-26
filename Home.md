@@ -32,5 +32,6 @@ We will need to find a solution for the backup of data.
 * [**Adding a new hard drive**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/NewDrive)
 * [**Add new user**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/NewUser)
 * [**Database description**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/Database)
+* [**Crontab jobs**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/Crontab)
 * [**Updating the database**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/UpdateDatabase)
 * [**Problems**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/Problems)
