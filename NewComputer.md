@@ -173,26 +173,52 @@ Add the following to your ~/.emacs file
 (add-to-list 'auto-mode-alist '("\\.cu\\'" . c++-mode))
 ```
 
-## Graphics card in the computer, install the proprietary driver for the card
+## NVIDIA graphics card drivers
 
-to check what graphic card you have.
+To install the latest version of NVIDIA drivers and CUDA, I simply tried to install the latest cuda. It takes care of the nvidia drivers.
 
+[Cuda download](https://developer.nvidia.com/cuda-downloads)
+
+I chose the runfile and followed the instructions. 
+
+After this, I had a look at this file
+```
+evince /usr/local/cuda-10.1/doc/pdf/CUDA_Installation_Guide_Linux.pdf &
+```
+
+Create a file at /etc/modprobe.d/blacklist-nouveau.conf with the following
+contents:
+```
+blacklist nouveau
+options nouveau modeset=0
+```
+Then regenerate the kernel initramfs:
+```
+sudo update-initramfs -u
+```
+
+Then reboot your computer
+
+Useful commands
 ```
 lspci | grep -i --color 'vga\|3d\|2d'
+lsmod
+nvidia-settings
 ```
 
-If the card is a Nvidia or AMD card you should try to used the proprietary drivers.
-To find information about what driver is currently used you need to the device ID for the next query. 
-(The device ID are numbers at the beginning of the last output, in my case they are "01:00.0" but that can differ I suppose) 
-
+You will need to setup some environment variables to use CUDA.
 ```
-sudo lspci -v -s 01:00.0
+emacs ~/.bashrc
 ```
-Look for "drivers" at the end of the output. If it states: "kernel driver in use: nouveau", try to install the proprietary driver. 
+Add the following
+```
+export PATH=/usr/local/cuda-10.1/bin:/usr/local/cuda-10.1/
+NsightCompute-2019.1${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64\
+${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+```
 
-### Install proprietary graphic drivers
 
-Go to Software & Updates under System Setting and select details in the dialogue box. Go to Hardware and/or additional drivers and select the tested proprietary drivers of your hardware.
 
 
 ## Debugging
