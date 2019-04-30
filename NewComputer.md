@@ -148,14 +148,13 @@ You might want to remove some entries from the crontab depending on the use of t
 
 ## Install Rstudio
 Go to [Rstudio](https://www.rstudio.com/products/rstudio/download/)
-Download the latest version for Ubuntu.
-Then in a terminal:
+Download the version for your Ubuntu version via the installer for supported platforms.
+
+Open Rstudio and try to install a package. For example, try to install tidyverse (this takes 10 minutes).
 
 ```
-sudo apt install gdebi-core
-sudo gdebi rstudio-xenial-1.1.463-amd64.deb # or whathever the file name is
+install.packages("tidyverse")
 ```
-
 
 If you can't install.packages(), try to unselect Tools/Global Options.../Packages/Use secure method for HTTP
 
@@ -208,16 +207,13 @@ nvidia-settings
 
 You will need to setup some environment variables to use CUDA.
 ```
-emacs ~/.bashrc
+emacs ~/.profile
 ```
 Add the following
 ```
 export PATH=$PATH:/usr/local/cuda-10.1/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-10.1/lib64
 ```
-
-
-
 
 ## Debugging
 
@@ -278,6 +274,5 @@ ssh compid -l kevin
 su
 emacs /etc/exports
 exportfs -av
-exit
 exit
 ```
