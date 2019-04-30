@@ -174,7 +174,9 @@ Add the following to your ~/.emacs file
 
 ## NVIDIA graphics card drivers
 
-To install the latest version of NVIDIA drivers and CUDA, I simply tried to install the latest cuda. It takes care of the nvidia drivers.
+To install the latest version of NVIDIA drivers and CUDA, I simply tried to install the latest cuda. It takes care of the nvidia drivers. 
+
+Make sure the version of CUDA you install is supported by tensorflow.
 
 [Cuda download](https://developer.nvidia.com/cuda-downloads)
 
