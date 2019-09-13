@@ -34,9 +34,8 @@ If this doesn't work either ^^, try as root to find out what name the new block 
 
 Use fdisk to delete any old partition on the drive and create a new primary partition.
 ```
-su
-umount /dev/sd?1
-fdisk /dev/sd? 
+sudo umount /dev/sd?1
+sudo fdisk /dev/sd? 
 m
 d
 n
@@ -49,7 +48,7 @@ Format the new partition and label it
 
 In the code below, replace ```/dev/sd?``` by what you used above and ```d?``` is what you identified in the first section. THIS STEP ERASES WHATEVER HAS BEEN ON THIS PARTITION BEFORE!
 
-```mkfs.ext4 /dev/sd?1 -L /d?```
+```sudo mkfs.ext4 /dev/sd?1 -L /d?```
 
 
 
@@ -65,9 +64,11 @@ What you need is the UUID of your partition.
 
 ### Create a mounting point for the drive
 
-For example
-
-```sudo mkdir /d36```
+```
+sudo mkdir /d??
+sudo chown kevin /d??
+sudo chgrp data /d??
+```
 
 ### Edit your fstab
 
