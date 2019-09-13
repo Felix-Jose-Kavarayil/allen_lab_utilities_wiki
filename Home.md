@@ -34,4 +34,5 @@ We will need to find a solution for the backup of data.
 * [**Database description**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/Database)
 * [**Crontab jobs**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/Crontab)
 * [**Updating the database**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/UpdateDatabase)
+* [**Backup of data**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/DataBackup)
 * [**Problems**](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/Problems)
