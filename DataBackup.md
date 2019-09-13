@@ -36,6 +36,11 @@ Check configuration
 sudo dsmc q opt 
 ```
 
+To backup only a directory
+
+```
+sudo dsmc selective "/d47/data/processing/mn829/mn829-01092019-1606/"
+```
 
 ## Confirmation that the backup is working
 
