@@ -159,6 +159,17 @@ install.packages("tidyverse")
 If you can't install.packages(), try to unselect Tools/Global Options.../Packages/Use secure method for HTTP
 
 
+## Anaconda Python
+
+To get all you need to get started with python, download the latest from anaconda.
+
+This will download a shell script.
+<code>
+chmod u+x Anaconda3-2019.10-Linux-x86_64.sh 
+./Anaconda3-2019.10-Linux-x86_64.sh 
+</code>
+
+
 ## ssh to the computer without a password
 
 If you plan to ssh often a computer, you might want to give it a ssh key so you don't have to give a password every time you log in.
