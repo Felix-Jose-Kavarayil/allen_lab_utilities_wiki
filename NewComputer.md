@@ -164,10 +164,10 @@ If you can't install.packages(), try to unselect Tools/Global Options.../Package
 To get all you need to get started with python, download the latest from anaconda.
 
 This will download a shell script.
-<code>
+```
 chmod u+x Anaconda3-2019.10-Linux-x86_64.sh 
 ./Anaconda3-2019.10-Linux-x86_64.sh 
-</code>
+```
 
 
 ## ssh to the computer without a password
