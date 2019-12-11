@@ -189,27 +189,13 @@ To install the latest version of NVIDIA drivers and CUDA, I simply tried to inst
 
 Make sure the version of CUDA you install is supported by tensorflow.
 
-[Cuda download](https://developer.nvidia.com/cuda-downloads)
+[Cuda download](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=deblocal)
 
-I chose the runfile and followed the instructions. 
+I chose the deb installation as the runfile was not working. 
 
-After this, I had a look at this file
-```
-evince /usr/local/cuda-10.1/doc/pdf/CUDA_Installation_Guide_Linux.pdf &
-```
 
-Create a file at /etc/modprobe.d/blacklist-nouveau.conf with the following
-contents:
-```
-blacklist nouveau
-options nouveau modeset=0
-```
-Then regenerate the kernel initramfs:
-```
-sudo update-initramfs -u
-```
+After a reboot, the graphics card was using a nvidia driver.
 
-Then reboot your computer
 
 Useful commands
 ```
