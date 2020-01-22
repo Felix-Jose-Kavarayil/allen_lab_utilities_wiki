@@ -185,9 +185,7 @@ Add the following to your ~/.emacs file
 
 ## NVIDIA graphics card drivers
 
-To install the latest version of NVIDIA drivers and CUDA, I simply tried to install the latest cuda. It takes care of the nvidia drivers. 
-
-Make sure the version of CUDA you install is supported by tensorflow.
+To install the latest version of NVIDIA drivers and CUDA, I simply install the Cuda. It is important to use a Cuda version that works with a tensorflow version that works with deeplabcut. As of January 2020, I used cuda 10.
 
 [Cuda download](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=deblocal)
 
