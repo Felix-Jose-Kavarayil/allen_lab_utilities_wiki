@@ -161,7 +161,7 @@ If you can't install.packages(), try to unselect Tools/Global Options.../Package
 
 ## Anaconda Python
 
-To get all you need to get started with python, download the latest from anaconda.
+To get all you need to get started with python, download the latest from [anaconda](https://www.anaconda.com/).
 
 This will download a shell script.
 ```
