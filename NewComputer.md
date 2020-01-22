@@ -191,6 +191,11 @@ I followed the instructions found on the [tensorflow website](https://www.tensor
 
 You will need to reboot to have the graphics card driver active.
 
+Then install this
+```
+sudo apt-get install nvidia-settings
+```
+
 
 Useful commands
 ```
@@ -199,7 +204,7 @@ lsmod
 nvidia-settings
 ```
 
-You will need to setup some environment variables to use CUDA.
+You will need to setup some environment variables to compile c++ programs using CUDA.
 ```
 emacs ~/.profile
 ```
