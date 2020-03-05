@@ -131,6 +131,15 @@ sudo ./updateAutoMountExports.sh
 ```
 cd /ext_drives/d31
 ```
+### Change the permissions
+
+The drive should be mounted
+```
+sudo chown kevin /d56
+sudo chgrp data /d56
+sudo chmod g+w /d56
+```
+
 
 ### Apply changes to other computers
 
