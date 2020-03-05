@@ -152,3 +152,7 @@ cd ~/repo/allen_lab_utilities/src/shell_scripts/
 ./updateRepos.sh
 sudo ./updateAutoMountExports.sh
 ```
+
+### Set up an automatic backup of your new drive
+
+Follow the instructions [here](https://bitbucket.org/kevin_allen/allen_lab_utilities/wiki/DataBackup).
