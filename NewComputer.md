@@ -156,7 +156,16 @@ Open Rstudio and try to install a package. For example, try to install tidyverse
 install.packages("tidyverse")
 ```
 
-If you can't install.packages(), try to unselect Tools/Global Options.../Packages/Use secure method for HTTP
+If you can't install.packages(), you might need to configure R to use a proxy. 
+
+```
+emacs ~/.Renviron
+```
+Add these 2 lines
+```
+http_proxy=www-int2.inet.dkfz-heidelberg.de:80
+https_proxy=www-int2.inet.dkfz-heidelberg.de:80
+```
 
 
 ## Anaconda Python
