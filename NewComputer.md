@@ -59,9 +59,11 @@ sudo gedit /etc/apt/apt.conf
 Add this line
 ```
 Acquire::http::proxy "http://www-int2.inet.dkfz-heidelberg.de:80/";
-Acquire::https::proxy "https://www-int2.inet.dkfz-heidelberg.de:80/";
+Acquire::https::proxy "http://www-int2.inet.dkfz-heidelberg.de:80/";
 Acquire::ftp::proxy "ftp://www-int2.inet.dkfz-heidelberg.de:80/";
 ```
+
+Notice that the `https::proxy` is set to `http:` address.
 
 ## Install git and automake
 
@@ -144,6 +146,35 @@ Test if this worked by trying to visit a mounted directory.
 You might want to remove some entries from the crontab depending on the use of the new computer. You can comment out a line with ```#```
 
 ```crontab -e```
+
+## Update R to the latest version
+
+```
+sudo apt-key adv --keyserver keyserver.ubuntu.com   --keyserver-options http-proxy=http://www-int2.inet.dkfz-heidelberg.de:80    --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+```
+
+Edit /etc/apt/sources.list 
+```
+sudo emacs /etc/apt/sources.list
+```
+Add this line for R 3.6 on Ubuntu 18
+
+```
+deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/
+```
+
+Add this line instead if you want R 4.0 on Ubuntu 18
+
+```
+deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran40/
+```
+
+Update and install 
+
+```
+sudo apt update
+sudo apt-get install r-base
+```
 
 
 ## Install Rstudio
