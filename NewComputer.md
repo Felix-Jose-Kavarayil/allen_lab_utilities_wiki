@@ -115,12 +115,6 @@ make
 sudo make install
 cd ..
 ```
-## Install relectro
-```
-cd ~/repo
-R CMD build relectro
-R CMD INSTALL relectro
-```
 
 ## Make changes available to other computers
 ```
@@ -174,6 +168,14 @@ Update and install
 ```
 sudo apt update
 sudo apt-get install r-base
+sudo apt-get install r-base-dev
+```
+
+## Install relectro
+```
+cd ~/repo
+R CMD build relectro
+R CMD INSTALL relectro
 ```
 
 
