@@ -290,13 +290,17 @@ source .profile
 
 ## Arduino
 
-To use the arduino software, I needed to install java 8 and set it as the default java version
-```
-sudo apt install openjdk-8-jdk
-java --version
-sudo update-alternatives --config java
+Download the latest Arduino IDE version from the website. 
+[website](https://www.arduino.cc/en/Main/Software)
 
 ```
+cd ~/Downloads
+tar xvf arduino-1.8.12-linux64.tar.xz
+sudo mv arduino-1.8.12 /opt
+cd /opt/arduino-1.8.12/
+sudo ./install.sh
+```
+
 ## Automatic backup
 
 If there are files stored on the new computer, it might be worth setting the automatic backup with the DKFZ facilities. The instructions are on this page  [[backup|Set the automatic backup on your computer]]. 
