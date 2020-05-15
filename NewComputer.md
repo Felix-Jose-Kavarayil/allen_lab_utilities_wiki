@@ -300,6 +300,10 @@ sudo mv arduino-1.8.12 /opt
 cd /opt/arduino-1.8.12/
 sudo ./install.sh
 ```
+On one computer, I had to set up the proxy manually to download library.
+1. Got to File/Preferences/Network
+2. Select Manual proxy configuration and HTTP, add www-int2.inet.dkfz-heidelberg.de as Host name and 80 as Port number.
+
 
 ## Automatic backup
 
