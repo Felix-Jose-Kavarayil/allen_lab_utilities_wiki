@@ -95,6 +95,40 @@ git clone https://kevin_allen@bitbucket.org/kevin_allen/allen_mouse_electrophysi
 git clone https://kevin_allen@bitbucket.org/kevin_allen/relectro.git
 ```
 
+## Update R to the latest version
+
+If you want to use a version of R that is more recent that the one coming with Ubuntu, try this.
+
+```
+sudo apt-key adv --keyserver keyserver.ubuntu.com   --keyserver-options http-proxy=http://www-int2.inet.dkfz-heidelberg.de:80    --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+```
+
+Edit /etc/apt/sources.list 
+```
+sudo emacs /etc/apt/sources.list
+```
+Add this line for R 3.6 on Ubuntu 18
+
+```
+deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/
+```
+
+Add this line instead if you want R 4.0 on Ubuntu 18
+
+```
+deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran40/
+```
+
+Update and install 
+
+```
+sudo apt update
+sudo apt-get install r-base
+sudo apt-get install r-base-dev
+```
+
+
+
 ## Set auto mount and exportfs, update, etc.
 Run newComputerSetup.sh
 ```
@@ -141,35 +175,6 @@ You might want to remove some entries from the crontab depending on the use of t
 
 ```crontab -e```
 
-## Update R to the latest version
-
-```
-sudo apt-key adv --keyserver keyserver.ubuntu.com   --keyserver-options http-proxy=http://www-int2.inet.dkfz-heidelberg.de:80    --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
-```
-
-Edit /etc/apt/sources.list 
-```
-sudo emacs /etc/apt/sources.list
-```
-Add this line for R 3.6 on Ubuntu 18
-
-```
-deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/
-```
-
-Add this line instead if you want R 4.0 on Ubuntu 18
-
-```
-deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran40/
-```
-
-Update and install 
-
-```
-sudo apt update
-sudo apt-get install r-base
-sudo apt-get install r-base-dev
-```
 
 ## Install relectro
 ```
