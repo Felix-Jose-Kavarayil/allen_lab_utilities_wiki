@@ -119,6 +119,11 @@ Add this line instead if you want R 4.0 on Ubuntu 18
 deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran40/
 ```
 
+Or 4.0 on Ubuntu 20
+```
+deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/
+```
+
 Update and install 
 
 ```
