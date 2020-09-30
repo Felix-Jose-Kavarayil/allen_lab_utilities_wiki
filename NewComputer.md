@@ -222,6 +222,11 @@ chmod u+x Anaconda3-2019.10-Linux-x86_64.sh
 ./Anaconda3-2019.10-Linux-x86_64.sh 
 ```
 
+If you want to use pip behind a proxy, you might need to do the following
+```
+pip install --proxy=http://www-int2.inet.dkfz-heidelberg.de:80 [packagename]
+```
+
 
 ## ssh to the computer without a password
 
