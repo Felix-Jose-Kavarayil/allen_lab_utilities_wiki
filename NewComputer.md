@@ -145,6 +145,8 @@ This should install several packages, set up automount to access the database, e
 
 You can edit data/maxKlustakwikProcesses manually to set the correct number of Klustakwik processes you want to run on the computer.
 
+If you have problems installing the R packages. You can do it once you have installed RStudio. Just run the file `~/repo/allen_lab_utilities/src/Rscripts/RDependencies.R`
+
 ## Install allen_mouse_electrophysiology
 ```
 cd ~/repo
