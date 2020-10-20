@@ -274,6 +274,11 @@ export PATH=$PATH:/usr/local/cuda-10.1/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-10.1/lib64
 ```
 
+## Installing Matlab (dear god!)
+
+It will not work behind a proxy. I used my mobile phone internet via usb
+
+
 ## Debugging
 
 If you are having trouble automounting your file systems, it may be useful to run automount in the foreground.
