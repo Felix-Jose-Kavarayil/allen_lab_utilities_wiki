@@ -77,7 +77,7 @@ sudo apt-get install automake
 
 
 ```
-git config --global http.proxy www.inet.dkfz-heidelberg.de:80
+git config --global http.proxy www-int2.inet.dkfz-heidelberg.de:80
 git config --global user.email "allen@uni-heidelberg.de"
 git config --global user.name "Kevin Allen"
 git config --global credential.helper store
