@@ -202,6 +202,21 @@ Open Rstudio and try to install a package. For example, try to install tidyverse
 install.packages("tidyverse")
 ```
 
+To have the right permission (wr-wr--r-) when creating files within R, you need to call the Sys.umask() command. We will set this so that it runs every time you start R.
+
+```
+emacs ~/.Rprofile
+```
+
+Add this line to the file
+
+```
+Sys.umask(0002) 
+```
+
+
+
+
 If you can't install.packages(), you might need to configure R to use a proxy. 
 
 ```
@@ -212,6 +227,10 @@ Add these 2 lines
 http_proxy=www-int2.inet.dkfz-heidelberg.de:80
 https_proxy=www-int2.inet.dkfz-heidelberg.de:80
 ```
+
+
+
+
 
 
 ## Anaconda Python
