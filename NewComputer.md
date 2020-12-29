@@ -313,6 +313,7 @@ sudo automount -f -v
 From another terminal, try to mount your file-systems by changing directories into the mountpoint.
 Check the output from the first terminal for clues as to why the mount failed or was not attempted. 
 
+On the Jetson Xavier NX, I had to change `vers=4` to `vers=3` in `/etc/auto.data` and `/etc/auto.ext_drives` to get automount to mount.
 
 ==== Modify you PATH variable ====
 
