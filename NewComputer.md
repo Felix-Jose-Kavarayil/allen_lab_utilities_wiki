@@ -368,3 +368,31 @@ emacs /etc/exports
 exportfs -av
 exit
 ```
+
+## Set the computer time to the dkfz server time
+
+Install chrony
+
+```
+sudo apt-get install chrony
+```
+
+Change the ntp server to dkfz by editing the conf file
+
+```
+sudo nano /etc/chrony/chrony.conf
+```
+
+Remove all the "pool" lines and add the following one
+
+```
+pool ns.dkfz-heidelberg.de  iburst
+```
+
+Enable, start, and restart the chrony.service
+
+```
+sudo systemctl enable chrony.service
+sudo systemctl start chrony.service
+sudo systemctl restart chrony.service
+```
