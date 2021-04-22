@@ -170,7 +170,7 @@ The next day, the other computers will have updated their configuration and the 
 
 If you want to do it manually, log on each computer and do
 ```
-cd repo/allen_lab_utilities/src/shell_scripts
+cd ~/repo/allen_lab_utilities/src/shell_scripts
 ./updateRepos.sh
 sudo ./updateAutoMountExports.sh
 ```
