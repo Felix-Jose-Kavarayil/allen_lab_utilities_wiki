@@ -105,14 +105,18 @@ Make sure only you have access to this file.
 
 ## Get a few repositories
 ```
+
+read -e -p "Enter Your Bitbucket username:" -i "kevin_allen" BBUSERNAME
+read -e -p "Enter Your GitHub username:" -i "kevin-allen" GHUSERNAME
+
 cd ~
 mkdir repo
 cd repo
-git clone https://kevin_allen@bitbucket.org/kevin_allen/allen_lab_utilities.git
-git clone https://kevin_allen@bitbucket.org/kevin_allen/allen_mouse_electrophysiology.git
-git clone https://kevin_allen@bitbucket.org/kevin_allen/relectro.git
-git clone https://kevin_allen@bitbucket.org/kevin_allen/shiny_lab.git
-git clone https://github.com/kevin-allen/spikeA.git
+git clone https://${BBUSERNAME}@bitbucket.org/kevin_allen/allen_lab_utilities.git
+git clone https://${BBUSERNAME}@bitbucket.org/kevin_allen/allen_mouse_electrophysiology.git
+git clone https://${BBUSERNAME}@bitbucket.org/kevin_allen/relectro.git
+git clone https://${BBUSERNAME}@bitbucket.org/kevin_allen/shiny_lab.git
+git clone https://${GHUSERNAME}@github.com/kevin-allen/spikeA.git
 ```
 
 ## Update R to the latest version
