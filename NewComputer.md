@@ -80,7 +80,7 @@ Before you clone a repository from either GitHub or Bitbucket, you need an acces
 If you try to clone via password, it says "Support for password authentication was removed on August 13, 2021. Please use a personal access token instead." on GitHub or "403 while accessing" on Bitbucket.
 
 Steps to follow for *GitHub* here:
-[Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token), directly [https://github.com/settings/tokens/new](add a token in your GitHub profile).
+[Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token), directly [add a token in your GitHub profile](https://github.com/settings/tokens/new).
 
 Same for *Bitbucket*, there it is called "app password". Mange them on [Bitbucket: app password](https://bitbucket.org/account/settings/app-passwords/).
 
