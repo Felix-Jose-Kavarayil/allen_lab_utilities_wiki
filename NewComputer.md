@@ -37,8 +37,8 @@ Go to system settings/network/network-proxy and add ```www-int2.inet.dkfz-heidel
 ## Create a group called data
 The group called data needs to have id = 501 and user needs this group as their main group
 ```
-sudo groupadd -g 501 data 
-sudo usermod -g data "USER"  
+sudo groupadd -g 501 data
+sudo usermod -g data $USER
 ```
 ## Set correct permission to files you create
 ```
