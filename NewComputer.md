@@ -73,6 +73,21 @@ sudo apt-get install git-core
 sudo apt-get install automake
 ```
 
+## Create an access token
+
+Before you clone a repository from either GitHub or Bitbucket, you need an access token (not identical to your password).
+
+If you try to clone via password, it says "Support for password authentication was removed on August 13, 2021. Please use a personal access token instead." Steps to follow here:
+[Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token), directly [https://github.com/settings/tokens/new](add a token in your GitHub profile).
+
+Same for Bitbucket, there it is called "app password". Mange them on [Bitbucket: app password](https://bitbucket.org/account/settings/app-passwords/).
+
+Use these tokens each for authentication instead of your personal password.
+
+On both Github and Bitbucket website, you can click on "Clone" to display the command to clone.
+
+
+
 ## Set git credential to pull from bitbucket without password
 
 
