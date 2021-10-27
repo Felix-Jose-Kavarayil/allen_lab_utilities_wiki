@@ -29,3 +29,5 @@ systemd-resolve --status
 ```
 I added exportfsReboot.sh to root crontab job at reboot.
 This will be added by newComputerSetup.sh.
+
+It is also useful to restart autofs in verbose mode: [Debugging Auto Mount Problems](https://help.ubuntu.com/community/Autofs#Debugging_Auto_Mount_Problems). Then try to `cd` into one of the mount points provided in `/etc/auto.master`.
