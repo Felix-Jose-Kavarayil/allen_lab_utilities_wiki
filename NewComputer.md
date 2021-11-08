@@ -156,6 +156,9 @@ sudo apt-get install r-base
 sudo apt-get install r-base-dev
 ```
 
+Install the R packages from command line using
+`sudo -E Rscript ~/repo/allen_lab_utilities/src/Rscripts/RDependencies.R`. 
+This does not need RStudio but root access since the lib path is not user writable.
 
 
 ## Set auto mount and exportfs, update, etc.
