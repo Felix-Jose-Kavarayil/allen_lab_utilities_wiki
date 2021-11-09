@@ -219,6 +219,8 @@ R CMD build relectro
 R CMD INSTALL relectro
 ```
 
+If the last command fails due to missing root privileges, you can open RStudio and select "packages", install from zip: select the one create using the build command (probably `relectro_0.0.0.9002.tar.gz`).
+
 
 ## Install Rstudio
 Go to [Rstudio](https://www.rstudio.com/products/rstudio/download/)
