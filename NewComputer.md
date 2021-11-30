@@ -378,6 +378,22 @@ On one computer, I had to set up the proxy manually to download library.
 2. Select Manual proxy configuration and HTTP, add www-int2.inet.dkfz-heidelberg.de as Host name and 80 as Port number.
 
 
+
+## neuroscope
+
+From [neurosuite website](http://neurosuite.sourceforge.net/GNULinux.html) download the most recent version of `LibKlustersShared` and `Neuroscope`.
+
+Install them using package manager
+```
+sudo dpkg -i libklustersshared_2.0.0-bionic_amd64.deb 
+sudo dpkg -i neuroscope_2.0.0-bionic_amd64.deb 
+```
+
+If this is not working due to missing Qt4, install it (it is not available in the official repos anymore)
+Follow the instructions on [askubuntu](https://askubuntu.com/a/1243318).
+If `apt update` says that there is a signing key missing for the ppa (external package), try to add it manually from the [ppa site](https://launchpad.net/~rock-core/+archive/ubuntu/qt4/) by looking into `Technical details about this PPA`. Add these lines manually using `sudo nano /etc/apt/sources.list`.
+To import the key, fetch the file from `https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x78cb407d3e3d8f94` if the command `sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 78CB407D3E3D8F94` does not work.
+
 ## Automatic backup
 
 If there are files stored on the new computer, it might be worth setting the automatic backup with the DKFZ facilities. The instructions are on this page  [[backup|Set the automatic backup on your computer]]. 
