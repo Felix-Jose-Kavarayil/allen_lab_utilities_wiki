@@ -393,6 +393,7 @@ If this is not working due to missing Qt4, install it (it is not available in th
 Follow the instructions on [askubuntu](https://askubuntu.com/a/1243318).
 If `apt update` says that there is a signing key missing for the ppa (external package), try to add it manually from the [ppa site](https://launchpad.net/~rock-core/+archive/ubuntu/qt4/) by looking into `Technical details about this PPA`. Add these lines manually using `sudo nano /etc/apt/sources.list`.
 To import the key, fetch the file from `https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x78cb407d3e3d8f94` if the command `sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 78CB407D3E3D8F94` does not work.
+These issues might be due to proxy settings, but defining the appropriate config by passing the variables  `http_proxy`/`https_proxy` and using `sudo -E` or temporarily disabling ipv6 did not work either.
 
 ## Automatic backup
 
