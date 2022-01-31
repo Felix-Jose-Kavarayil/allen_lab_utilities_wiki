@@ -277,6 +277,33 @@ If you want to use pip behind a proxy, you might need to do the following
 ```
 pip install --proxy=http://www-int2.inet.dkfz-heidelberg.de:80 [packagename]
 ```
+or set it before
+```
+export https_proxy=www-int2.inet.dkfz-heidelberg.de:80
+echo $https_proxy
+```
+
+It may be useful to upgrade all pip packages
+First upgrade pip itself
+```
+pip install --upgrade pip
+```
+Follow [instructions](https://stackoverflow.com/a/3452888) to update all packages
+```
+pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
+```
+
+
+## install phy
+It is useful to have this installed on the computer where the data is stored, so that with remote graphical access it can be much faster
+
+Follow [instructions](https://github.com/cortex-lab/phy#installation-instructions)
+```
+pip install phy --pre --upgrade
+```
+logout and login again to have phy in the path, check with `which phy`.
+
+
 
 
 ## ssh to the computer without a password
