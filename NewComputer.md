@@ -303,7 +303,18 @@ pip install phy --pre --upgrade
 ```
 logout and login again to have phy in the path, check with `which phy`.
 
+If the data was already processed with phy on a different computer, some files are created with "-rw-r--r--" permissions (i.e. no group writing), so you might delete them first using
+```
+rm -rf .phy && rm -v phy.log
+```
 
+Using `ssh -X ...` you can forward the graphical windows to your machine. Login to the remote machine.
+
+Then go ahead using
+```
+phy template-gui params.py
+```
+in the corresponding session folder.
 
 
 ## ssh to the computer without a password
