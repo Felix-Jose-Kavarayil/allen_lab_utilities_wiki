@@ -481,3 +481,5 @@ sudo systemctl enable chrony.service
 sudo systemctl start chrony.service
 sudo systemctl restart chrony.service
 ```
+
+[DKFZ NTP time server](https://itcfwiki.inet.dkfz-heidelberg.de/itcfwiki/index.php/Zeitserver) file `/etc/ntp.conf`
