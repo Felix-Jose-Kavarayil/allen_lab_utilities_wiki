@@ -34,6 +34,19 @@ You should have access to internet now. If this is not the case, you need to sor
 
 Go to system settings/network/network-proxy and add ```www-int2.inet.dkfz-heidelberg.de 80``` to the http and https proxy line.
 
+### Check proxy settings
+Check using
+```printenv | grep -i proxy```
+
+You might put these lines in `~/.bashrc`
+
+```
+export http_proxy=http://www-int2.inet.dkfz-heidelberg.de:80
+export HTTP_PROXY=http://www-int2.inet.dkfz-heidelberg.de:80
+export https_proxy=http://www-int2.inet.dkfz-heidelberg.de:80
+export HTTPS_PROXY=http://www-int2.inet.dkfz-heidelberg.de:80
+```
+
 ## Create a group called data
 The group called data needs to have id = 501 and user needs this group as their main group
 ```
