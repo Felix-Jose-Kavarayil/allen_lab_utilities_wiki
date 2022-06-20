@@ -13,3 +13,6 @@ One computer acts as a server for a few key directories. You can find which one 
 These directories will appear on each computer because auto.mount will mount the hard drive in the background for you. 
 
 ##
+
+## Update or set symbolic link of mouse data manually
+In `/adata/electro`, run `ln -sfn /ext_drives/dXX/data/electro/xy1234 xy1234` where dXX is the disk and xy1234 is the mouse name. Check with `ll /adata/electro` to list all destinations of symbol link or `realpath .` in the appropriate folder.
