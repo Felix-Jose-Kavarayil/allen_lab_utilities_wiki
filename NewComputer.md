@@ -446,6 +446,8 @@ If `apt update` says that there is a signing key missing for the ppa (external p
 To import the key, fetch the file from `https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x78cb407d3e3d8f94` if the command `sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 78CB407D3E3D8F94` does not work.
 These issues might be due to proxy settings, but defining the appropriate config by passing the variables  `http_proxy`/`https_proxy` and using `sudo -E` or temporarily disabling ipv6 did not work either.
 
+Check with `sudo apt --fix-broken install` if dependencies are not resolved yet.
+
 ## Automatic backup
 
 If there are files stored on the new computer, it might be worth setting the automatic backup with the DKFZ facilities. The instructions are on this page  [[backup|Set the automatic backup on your computer]]. 
