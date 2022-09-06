@@ -1,5 +1,7 @@
 # Data backup on DKFZ servers using tsm 
 
+This procedure was tested on September 6th, 2022, on an Ubuntu 20 computer. Use this protocol instead of the older and more complex one on the [dokuwiki](http://a230-pc46/doku.php?id=backup_ubuntu).
+
 ## Register your computer for TSM backup
 
 1. Go to [ICTF User Portal](https://info.dkfz-heidelberg.de/itcf/UserPortal/), log in and ask for TSM backup of your computer (Benutzerservice/Datensicherung, then click on `TSM backup`).
