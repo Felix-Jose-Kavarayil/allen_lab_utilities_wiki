@@ -130,10 +130,7 @@ Here is an example
 I left this file as it was. 
 
 
-## Test the installation
-
-
-###  Connect to the backup server .
+##  Connect to the backup server
 
 `sudo dsmc q sched`
 
