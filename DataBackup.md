@@ -246,6 +246,11 @@ sudo dsmc q sched
 ```
 ps -ef | grep dsm
 ```
+of 
+
+`systemctl status dsmcad`
+
+
 
 ### Check for errors
 
@@ -259,6 +264,15 @@ cat /var/log/dsmerror.log
 ```
 sudo dsmc q fi
 ```
+### Check if a file was backed up
+
+`sudo dsmc q ba filename`
+
+### To do a full backup now
+
+`sudo dsmc incr`
+
+
 
 ### Check configuration
 
@@ -272,18 +286,37 @@ sudo dsmc q opt
 sudo dsmc selective "/d47/data/processing/mn829/mn829-01092019-1606/"
 ```
 
-## Confirmation that the backup is working
+### Confirmation that the backup is working
 
-The best way to test a backup system is to try to get back your file from it.
+The best way to test a backup system is to try to get your file back from it.
 
-To check if a file has been backed up
+To check if a file has been backed up.
 
 ```
 sudo dsmc q backup "/d13/data/processing/ka2413/ka2413-121211-0109/ka2413-121211-0109.clu.*"
 ```
 
-To test if you can get a file back
+To test if you can get a file back.
 
 ```
 dsmc restore /d13/data/processing/ka2413/ka2413-121211-0109/ka2413-121211-0109.clu -latest /tmp/ka2413-121211-0109.clu
 ```
+
+## Restore data
+
+
+Restore a file to its original directory
+
+`dsmc restore /home/oraadm/data.txt`
+
+Restore a file to a specified directory
+
+`dsmc restore /home/oraadm/data.txt /tmp/data.txt`
+
+Display a list of active and inactive backup versions of files from which you can select versions to restore
+
+`dsmc restore "/home/oraadmin/*"-pick -inactive`
+
+To restore a file from a specific date, in this case the date is 2020/Dec/26.
+
+`sudo dsmc restore /path/to/my/missing/file -pick -inactive -sub=yes -pitd=12/26/20 /destination/path/`
