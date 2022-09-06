@@ -7,6 +7,32 @@
 ![dsm_register.png](https://bitbucket.org/repo/baqxqdz/images/2395493039-dsm_register.png)
 
 
+## Getting the software
+
+Three days after registering, I received an email with the link to download some software.
+
+```
+Sehr geehrte:r Kevin Allen,
+
+ihr Knoten würde aktualisiert. Das neugesetzte Passwort ist "a230a230" und der Backupserver ist EXT_BACKUP.
+Unter folgendem Link können sie den Client neu herunterladen.
+https://trr1.inet.dkfz-heidelberg.de/ibmsp/linux/deb/
+
+Mit freundlichen Grüßen
+
+das ITCF-Team
+
+Um den aktuellen Status Ihrer Serviceanfrage zu verfolgen, melden Sie sich bitte im Kundenbereich an.
+
+Deutsches Krebsforschungszentrum
+Stiftung des öffentlichen Rechts
+Im Neuenheimer Feld 280
+69120 Heidelberg
+Tel:  +49 6221 42-2376
+Fax: +49 6221 42-2399
+```
+
+
 
 
 1) Go to the ICTF User Portal and demand a tsm backup. They will send you a mail with the node name (your pc name) and a password as well as a link to the files you need to install. 
