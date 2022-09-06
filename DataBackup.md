@@ -209,6 +209,32 @@ Restart your computer and check if the dsmcad is running.
 `systemctl status dsmcad`
 
 
+The output should be 
+
+```
+dsmcad.service - "IBM SP Client dsmcad service."
+     Loaded: loaded (/etc/systemd/system/dsmcad.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2022-09-06 10:29:47 CEST; 54s ago
+    Process: 2118 ExecStart=/usr/bin/dsmcad (code=exited, status=0/SUCCESS)
+      Tasks: 3 (limit: 19041)
+     Memory: 47.4M
+     CGroup: /system.slice/dsmcad.service
+             └─2159 /usr/bin/dsmcad
+
+Sep 06 10:29:47 a230-pc46 systemd[1]: Starting "IBM SP Client dsmcad service."...
+Sep 06 10:29:47 a230-pc46 systemd[1]: Started "IBM SP Client dsmcad service.".
+
+```
+
+If you get this output, the backup should be running automatically every working day.
+
+You can confirm that a backup was made with the following command.
+
+```
+sudo dsmc q fi
+```
+
+
 ## Useful commands
 
 ### Connect to the server
