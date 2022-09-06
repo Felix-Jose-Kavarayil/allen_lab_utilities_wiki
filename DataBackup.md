@@ -32,12 +32,17 @@ Tel:  +49 6221 42-2376
 Fax: +49 6221 42-2399
 ```
 
+* Go to the [link](https://trr1.inet.dkfz-heidelberg.de/ibmsp/linux/deb/) with your browser and download the files.
+
+
+## Instructions for the installation 
+
+The instructions are in the `howto.dkfz` file.
 
 
 
-1) Go to the ICTF User Portal and demand a tsm backup. They will send you a mail with the node name (your pc name) and a password as well as a link to the files you need to install. 
 
-The howto.dkfz file contains installation instructions that cover the next four steps.
+ howto.dkfz file contains installation instructions that cover the next four steps.
 
 2) Go to the folder with the rpm files. Save the tar file on your pc. The following commands need to be executed as root (sudo su) and run the following command after having changed to the directory where the file is downloaded: tar -xvf *-TIV-TSMBAC-LinuxX86.tar (replacing * with the version)
 
