@@ -71,11 +71,11 @@ We will modify the one provided by the dkfz.
 
 #### dsm.opt
 
-`emacs /opt/tivoli/tsm/client/ba/bin/dsm.opt`
+`sudo emacs /opt/tivoli/tsm/client/ba/bin/dsm.opt`
 
-1. Change the DOMain line so that it reflects your needs: eg /home /d66
+You will need to modify the `DOMain` line so that it reflects your needs: eg /home /d66
 
-You should backup all hard drive with data. Use `df -h` to know which hard drives are directly attached to your computer. 
+You should back up all hard drives with data. Use `df -h` to know which hard drives are directly attached to your computer. 
 
 Here is the output of `df -h` on one computer.
 
@@ -107,90 +107,125 @@ I changed the `DOMain line to `* DOMain	/ /d47 /d36 /d55`.
 
 #### dsm.sys
 
-`emacs /opt/tivoli/tsm/client/ba/bin/dsm.sys`
+`sudo emacs /opt/tivoli/tsm/client/ba/bin/dsm.sys`
+
+Select the right `DEFAULTServer`
+
+In the email from the ITCF-Team, they informed me that my backup server was `EXT_BACKUP`.
+
+I edited the DEFAULTServer line like this.
+
+`DEFAULTServer		EXT_BACKUP`
+
 
 Change the NodeName line so that it reflects your pc name: eg a230-pc84
+
+Here is an example
+`* NODENAME		a230-pc46`
 
 #### backup.excl
 
 `emacs /opt/tivoli/tsm/client/ba/bin/backup.excl`
 
-
-6) Install the .deb files:
-dpkg -i gskcrypt64-8.0.deb
-dpkg -i gskssl64-8.0.deb
-dpkg -i TIVsm-API64-7.1.8.deb
-dpkg -i TIVsm-APIcit-7.1.8.deb
-dpkg -i TIVsm-BA-7.1.8.deb
-dpkg -i TIVsm-Bacit-7.1.8.deb
-
-7) Make a log file
-cd /var/log/
-mkdir tsm
-chown -R your_user_name:root tsm
-chmod 755 tsm
+I left this file as it was. 
 
 
-7) Check the installed libraries:
-
-ldd /usr/bin/dsmc
-If some libraries are not found, run
-emacs /etc/ld.so.conf.d/tsm.conf
-and copy the following lines into the file:
-/opt/tivoli/tsm/client/api/bin/
-/opt/tivoli/tsm/client/api/bin64/
-/usr/local/ibm/gsk8_64/lib64/
-/usr/local/ibm/gsk8/lib/
-
-Create the necessary library links 
-sudo ldconfig
-Test that it is now working 
-ldd /usr/bin/dsmc
-
-8) Test if dsmc can connect to the server:
-dsmc q sched
-It will ask for the node name (your pc name) and the password that the ICTF sent to you.
+## Test the installation
 
 
+###  Connect to the backup server .
 
+`sudo dsmc q sched`
 
-## Configuration files
+Press enter when asked for the node name and enter the password that the ICTF sent to you by email.
+
+You should see an output like this one.
+
 ```
-sudo emacs /opt/tivoli/tsm/client/ba/bin/dsm.sys
+IBM Spectrum Protect
+Command Line Backup-Archive Client Interface
+  Client Version 8, Release 1, Level 13.3 
+  Client date/time: 09/06/2022 09:29:36
+(c) Copyright by IBM Corporation and other(s) 1990, 2022. All Rights Reserved. 
 
-sudo emacs /opt/tivoli/tsm/client/ba/bin/dsm.opt
+Node Name: A230-PC46
+Please enter your user id <A230-PC46>: 
+
+Please enter password for user id "A230-PC46": 
+
+Session established with server EXT_BACKUP: Linux/ppc64le
+  Server Version 8, Release 1, Level 12.114
+  Server date/time: 09/06/2022 09:30:29  Last access: 04/08/2022 04:13:07
+
+    Schedule Name: EVENING
+      Description: 
+   Schedule Style: Enhanced
+           Action: Incremental
+          Options: -quiet
+          Objects: 
+         Priority: 5
+   Next Execution: 10 Hours and 30 Minutes
+         Duration: 3 Hours 
+           Period: 
+      Day of Week: Monday, Tuesday, Wednesday, Thursday, Friday
+            Month: Any
+     Day of Month: Any
+    Week of Month: Any
+           Expire: Never
+
 ```
+
+## Install and enable the TSM scheduler
+
+Copy the file dsmcad.service to /etc/systemd/system/
+
+`sudo cp /opt/tivoli/tsm/client/ba/bin/dsmcad.service /etc/systemd/system/`
+
+Check if the daemon is running
+
+`systemctl status dsmcad`
+
+Enable the dsmcad at startup.
+
+`systemctl enable dsmcad`
+
+
 
 ## Useful commands
+
+### Connect to the server
 
 Test if dsmc can connect to the server
 ```
 sudo dsmc q sched
 ```
 
-Check if dsmc is running
+### Check if dsmc is running
+
 ```
 ps -ef | grep dsm
 ```
 
-Check for errors
+### Check for errors
+
 ```
 cat /var/log/dsmsched.log
 cat /var/log/dsmerror.log
 ```
 
-Test for recent backup activity
+### Test for recent backup activity
 
 ```
 sudo dsmc q fi
 ```
 
-Check configuration
+### Check configuration
+
 ```
 sudo dsmc q opt 
 ```
 
-To backup only a directory
+### To backup only a directory
 
 ```
 sudo dsmc selective "/d47/data/processing/mn829/mn829-01092019-1606/"
@@ -205,10 +240,9 @@ To check if a file has been backed up
 ```
 sudo dsmc q backup "/d13/data/processing/ka2413/ka2413-121211-0109/ka2413-121211-0109.clu.*"
 ```
+
 To test if you can get a file back
+
 ```
 dsmc restore /d13/data/processing/ka2413/ka2413-121211-0109/ka2413-121211-0109.clu -latest /tmp/ka2413-121211-0109.clu
 ```
-
-
-* You might need to import the public key: rpm --import RPM-GPG-KEY-ibmpkg
