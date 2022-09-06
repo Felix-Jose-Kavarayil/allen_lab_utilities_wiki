@@ -32,7 +32,7 @@ Tel:  +49 6221 42-2376
 Fax: +49 6221 42-2399
 ```
 
-* Go to the [link](https://trr1.inet.dkfz-heidelberg.de/ibmsp/linux/deb/) with your browser and download the files.
+* Go to the [link](https://trr1.inet.dkfz-heidelberg.de/ibmsp/linux/deb/) with your browser and download the files. In Chrome, right-click on a file and click `save targtet as...`. Do it for all the files in the folder. 
 
 ![deb.png](https://bitbucket.org/repo/baqxqdz/images/742565410-deb.png)
 
