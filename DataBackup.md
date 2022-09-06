@@ -39,32 +39,82 @@ Fax: +49 6221 42-2399
 
 ## Instructions for the installation 
 
-The instructions are in the `howto.dkfz` file.
+In theory, the instructions are in the `howto.dkfz` file. But this will not work as the files we have are .deb instead of .rpm. Try the instructions below.
 
 
+* `cd ~/Downloads`
+* `tar -xvf *-TIV-TSMBAC-LinuxX86_DEB.tar`
+* `sudo dpkg -i gskcrypt64_8.0-55.24.linux.x86_64.deb`
+* `sudo dpkg -i gskssl64_8.0-55.24.linux.x86_64.deb`
+* `sudo dpkg -i tivsm-api64.amd64.deb`
+* `sudo dpkg -i tivsm-apicit.amd64.deb`
+* `sudo dpkg -i tivsm-ba.amd64.deb`
+* `sudo dpkg -i tivsm-bacit.amd64.deb`
 
 
- howto.dkfz file contains installation instructions that cover the next four steps.
+## Configuration of the backup system. 
 
-2) Go to the folder with the rpm files. Save the tar file on your pc. The following commands need to be executed as root (sudo su) and run the following command after having changed to the directory where the file is downloaded: tar -xvf *-TIV-TSMBAC-LinuxX86.tar (replacing * with the version)
+The configuration is done via three text files: `dsm.opt`, `dsm.sys` and `backup.excl`.
+These files should be in the folder `/opt/tivoli/tsm/client/ba/bin/`.
+We will modify the one provided by the dkfz. 
 
-3) Install the following packages:
-alien gskcrypt64-8.0.50.66.linux.x86_64.rpm
-alien gskssl64-8.0.50.66.linux.x86_64.rpm
-alien TIVsm-API64.x86_64.rpm
-alien TIVsm-APIcit.x86_64.rpm 
-alien TIVsm-BA.x86_64.rpm
-alien TIVsm-Bacit.x86_64.rpm
 
-4) You might need to import the public key: rpm --import RPM-GPG-KEY-ibmpkg
+### Copy the configuration file to their destination
 
-5) Create the dsm.opt, dsm.sys and backup.excl files:
-emacs /opt/tivoli/tsm/client/ba/bin/dsm.opt
-Copy the dsm.opt.dkfz file content into the file. Change the DOMain line so that it reflects your needs: eg /home /d66
-emacs /opt/tivoli/tsm/client/ba/bin/dsm.sys
-Copy the dsm.sys.dkfz file content into the file. Change the NodeName line so that it reflects your pc name: eg a230-pc84
-emacs /opt/tivoli/tsm/client/ba/bin/backup.excl
-Copy the backup.excl.dkfz file content into the file.
+* `sudo cp dsm.opt.dkfz /opt/tivoli/tsm/client/ba/bin/dsm.opt`
+* `sudo cp dsm.sys.dkfz /opt/tivoli/tsm/client/ba/bin/dsm.sys`
+* `sudo cp backup.excl.dkfz /opt/tivoli/tsm/client/ba/bin/backup.excl`
+
+
+### Modify the configuration file
+
+
+#### dsm.opt
+
+`emacs /opt/tivoli/tsm/client/ba/bin/dsm.opt`
+
+1. Change the DOMain line so that it reflects your needs: eg /home /d66
+
+You should backup all hard drive with data. Use `df -h` to know which hard drives are directly attached to your computer. 
+
+Here is the output of `df -h` on one computer.
+
+```
+Filesystem      Size  Used Avail Use% Mounted on
+udev            7,8G     0  7,8G   0% /dev
+tmpfs           1,6G  2,1M  1,6G   1% /run
+/dev/sda6       218G   30G  177G  15% /
+tmpfs           7,8G  369M  7,5G   5% /dev/shm
+tmpfs           5,0M  4,0K  5,0M   1% /run/lock
+tmpfs           7,8G     0  7,8G   0% /sys/fs/cgroup
+/dev/loop0      128K  128K     0 100% /snap/bare/5
+/dev/loop1       62M   62M     0 100% /snap/core20/1328
+/dev/loop2       44M   44M     0 100% /snap/snapd/14978
+/dev/loop3      249M  249M     0 100% /snap/gnome-3-38-2004/99
+/dev/loop5       66M   66M     0 100% /snap/gtk-common-themes/1519
+/dev/loop4       55M   55M     0 100% /snap/snap-store/558
+/dev/sda1       511M  4,0K  511M   1% /boot/efi
+/dev/sdb1       3,6T  3,2T  226G  94% /d47
+/dev/sdc1       3,6T  2,9T  580G  84% /d36
+/dev/sdd1       3,6T  2,1T  1,4T  60% /d55
+tmpfs           1,6G   24K  1,6G   1% /run/user/125
+tmpfs           1,6G   60K  1,6G   1% /run/user/1000
+```
+I wanted to backup `/d47`, `/d36`, `/d55` and `/`.
+
+I changed the `DOMain line to `* DOMain	/ /d47 /d36 /d55`.
+
+
+#### dsm.sys
+
+`emacs /opt/tivoli/tsm/client/ba/bin/dsm.sys`
+
+Change the NodeName line so that it reflects your pc name: eg a230-pc84
+
+#### backup.excl
+
+`emacs /opt/tivoli/tsm/client/ba/bin/backup.excl`
+
 
 6) Install the .deb files:
 dpkg -i gskcrypt64-8.0.deb
@@ -159,3 +209,6 @@ To test if you can get a file back
 ```
 dsmc restore /d13/data/processing/ka2413/ka2413-121211-0109/ka2413-121211-0109.clu -latest /tmp/ka2413-121211-0109.clu
 ```
+
+
+* You might need to import the public key: rpm --import RPM-GPG-KEY-ibmpkg
