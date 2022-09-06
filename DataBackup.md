@@ -34,6 +34,8 @@ Fax: +49 6221 42-2399
 
 * Go to the [link](https://trr1.inet.dkfz-heidelberg.de/ibmsp/linux/deb/) with your browser and download the files.
 
+![deb.png](https://bitbucket.org/repo/baqxqdz/images/742565410-deb.png)
+
 
 ## Instructions for the installation 
 
