@@ -139,6 +139,8 @@ I left this file as it was.
 
 Press enter when asked for the node name and enter the password that the ICTF sent to you by email.
 
+dsmc will store the password for future connections.
+
 You should see an output like this one.
 
 ```
@@ -177,6 +179,14 @@ Session established with server EXT_BACKUP: Linux/ppc64le
 
 ## Install and enable the TSM scheduler
 
+The installation created the `/etc/init.d/dsmcad` link. This is a symbolic link to `/opt/tivoli/tsm/client/ba/bin/rc.dsmcad`.
+
+I ran this command to install System-V style init script links.
+
+```
+update-rc.d dsmcad defaults
+```
+
 Copy the file dsmcad.service to /etc/systemd/system/
 
 `sudo cp /opt/tivoli/tsm/client/ba/bin/dsmcad.service /etc/systemd/system/`
@@ -185,10 +195,18 @@ Check if the daemon is running
 
 `systemctl status dsmcad`
 
+If not running, 
+
+`systemctl start dsmcad`
+
+
 Enable the dsmcad at startup.
 
 `systemctl enable dsmcad`
 
+Restart your computer and check if the dsmcad is running.
+
+`systemctl status dsmcad`
 
 
 ## Useful commands
