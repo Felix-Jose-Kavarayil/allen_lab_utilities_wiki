@@ -306,6 +306,7 @@ dsmc restore /d13/data/processing/ka2413/ka2413-121211-0109/ka2413-121211-0109.c
 
 ## Restore data
 
+For more information on [restore](https://www.ibm.com/docs/en/spectrum-protect/8.1.0?topic=data-command-line-restore-examples)
 
 Restore a file to its original directory
 
@@ -322,3 +323,8 @@ Display a list of active and inactive backup versions of files from which you ca
 To restore a file from a specific date, in this case the date is 2020/Dec/26.
 
 `sudo dsmc restore /path/to/my/missing/file -pick -inactive -sub=yes -pitd=12/26/20 /destination/path/`
+
+
+To restore a directory with the subdirectories
+
+sudo dsmc restore /d47/data/processing/ /media/kevin/_d64/data/processing/ -subdir=yes
