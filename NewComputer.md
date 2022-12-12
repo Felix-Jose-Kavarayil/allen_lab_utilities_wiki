@@ -498,3 +498,44 @@ sudo systemctl restart chrony.service
 ```
 
 [DKFZ NTP time server](https://itcfwiki.inet.dkfz-heidelberg.de/itcfwiki/index.php/Zeitserver) file `/etc/ntp.conf`
+
+
+## Nvidia GPU
+
+remove all nvidia related stuff:
+```
+sudo apt-get remove --purge '^nvidia-.*'
+sudo apt-get remove --purge '^libnvidia-.*'
+sudo apt-get remove --purge '^cuda-.*'
+```
+install appropriate kernel
+```
+sudo apt-get install linux-headers-$(uname -r)
+```
+Download newest version
+[CUDA Toolkit 12.0 Downloads](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&
+Distribution=Ubuntu&target_version=20.04&target_type=deb_local)
+
+Select
+* Operating System: Linux
+* Architecture: x86_64
+* Distribution: Ubuntu
+* Version: 20.04
+* Installer Type: deb (local)
+
+Follow the instructions there by running the commands.
+
+The public key can be imported as follows
+```
+sudo apt-key adv --keyserver keyserver.ubuntu.com   --keyserver-options http-proxy=http://www-int2.inet.dkfz-heidelberg.de:80    --recv-keys A4B469963BF863CC
+```
+
+Check:
+
+```
+nvcc --version
+```
+
+```
+nvidia-smi
+```
