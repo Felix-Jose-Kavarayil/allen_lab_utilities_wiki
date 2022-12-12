@@ -531,7 +531,7 @@ The public key can be imported as follows
 sudo apt-key adv --keyserver keyserver.ubuntu.com   --keyserver-options http-proxy=http://www-int2.inet.dkfz-heidelberg.de:80    --recv-keys A4B469963BF863CC
 ```
 
-Check:
+Useful commands:
 
 ```
 nvcc --version
@@ -539,4 +539,8 @@ nvcc --version
 
 ```
 nvidia-smi
+```
+
+```
+sudo modprobe nvidia
 ```
