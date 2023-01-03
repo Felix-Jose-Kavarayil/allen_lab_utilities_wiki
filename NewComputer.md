@@ -426,6 +426,14 @@ sudo modprobe nvidia
 
 It will not work behind a proxy. I used my mobile phone internet via usb
 
+License:
+```
+grep -A4 "MATLAB MLM" ~/.matlab/R*_licenses/*.lic
+```
+
+SN=40942222
+
+/usr/local/MATLAB/R2020b/bin/activate_matlab.sh
 
 ## Debugging
 
