@@ -455,7 +455,7 @@ If there is a file (not ending in "deact"), you may deactivate it first by runni
 * Aktivieren, um die Lizenzdatei abzurufen / Einen Computer aktivieren
 * Use the pc name as label (Aktivierungsbezeichnung)
 * transfer the lic file generated
-* Run /usr/local/MATLAB/R2020b/bin/activate_matlab.sh on the machine, select offline installation
+* Run `/usr/local/MATLAB/R2020b/bin/activate_matlab.sh` on the machine, select offline installation
 
 ## Debugging
 
