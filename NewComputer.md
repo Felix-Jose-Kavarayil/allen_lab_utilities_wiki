@@ -424,16 +424,38 @@ sudo modprobe nvidia
 
 ## Installing Matlab (dear god!)
 
+online installation:
 It will not work behind a proxy. I used my mobile phone internet via usb
 
-License:
+### License:
+
+We have one license (license number (SN) = 40942222). 
+
+To actiavate it on several computers, follow these steps:
+
+First, on a pc with Matlab installed, you can check the license.
 ```
-grep -A4 "MATLAB MLM" ~/.matlab/R*_licenses/*.lic
+grep -A4 "INCREMENT MATLAB " ~/.matlab/R*_licenses/*.lic
 ```
 
-SN=40942222
+If there is a file (not ending in "deact"), you may deactivate it first by running `/usr/local/MATLAB/R2020b/bin/deactivate_matlab.sh`
 
-/usr/local/MATLAB/R2020b/bin/activate_matlab.sh
+* For each computer, you need to activate it individually on the Mathworks page.
+* Follow the instructions here: https://de.mathworks.com/matlabcentral/answers/235126-how-do-i-generate-a-matlab-license-file (Option 2: Manually creating a License File).
+* License Center: https://www.mathworks.com/licensecenter
+* Installieren und aktivieren: Aktuelle Aktivierungen anzeigen
+* This is the current overview of activated licenses on the computers:
+
+| Aktivierungsbezeichnung | Host-ID      | Datum der Aktivierung | Betriebssystem |
+|-------------------------|--------------|-----------------------|----------------|
+| a230-pc59               | 1831BF0DD305 | 09 Jan 2023           | Linux          |
+| a230-pc84               | F02F7485E2A3 | 27 Sep 2021           | Linux, Windows |
+| a230-pc73               | 244BFE828416 | 20 Okt 2020           | Linux          |
+
+* Aktivieren, um die Lizenzdatei abzurufen / Einen Computer aktivieren
+* Use the pc name as label (Aktivierungsbezeichnung)
+* transfer the lic file generated
+* Run /usr/local/MATLAB/R2020b/bin/activate_matlab.sh on the machine, select offline installation
 
 ## Debugging
 
