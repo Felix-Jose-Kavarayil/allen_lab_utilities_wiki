@@ -418,6 +418,8 @@ nvidia-smi
 ```
 
 ```
+lsmod | grep nvidia
+sudo rmmod nvidia
 sudo modprobe nvidia
 ```
 
