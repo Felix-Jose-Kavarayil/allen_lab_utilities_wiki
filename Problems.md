@@ -31,3 +31,13 @@ I added exportfsReboot.sh to root crontab job at reboot.
 This will be added by newComputerSetup.sh.
 
 It is also useful to restart autofs in verbose mode: [Debugging Auto Mount Problems](https://help.ubuntu.com/community/Autofs#Debugging_Auto_Mount_Problems). Then try to `cd` into one of the mount points provided in `/etc/auto.master`.
+
+Useful commands [mount.nfs](https://unix.stackexchange.com/questions/106122/mount-nfs-access-denied-by-server-while-mounting-on-ubuntu-machines)
+```
+cat /etc/exports # from the server
+showmount -e a230-pcXX # from the client to check if mount is available
+
+sudo service autofs stop
+# then watch the output of the following command while trying to cd... into desired mount point
+sudo automount -f -v -d
+```
