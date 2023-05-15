@@ -1,4 +1,4 @@
-#New Hard Drive
+# New Hard Drive
 
 ## If the hard drive is new
 
@@ -50,6 +50,13 @@ In the code below, replace ```/dev/sd?``` by what you used above and ```d?``` is
 
 ```sudo mkfs.ext4 /dev/sd?1 -L /d?```
 
+Alternatively, simply create a new partition table (GPT for large disks) and create one partition in it (use default values for number, sector start/end)
+```
+g
+n
+p
+w
+```
 
 
 ## For all drives
