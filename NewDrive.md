@@ -44,12 +44,6 @@ p
 w
 ```
 
-Format the new partition and label it
-
-In the code below, replace ```/dev/sd?``` by what you used above and ```d?``` is what you identified in the first section. THIS STEP ERASES WHATEVER HAS BEEN ON THIS PARTITION BEFORE!
-
-```sudo mkfs.ext4 /dev/sd?1 -L /d?```
-
 Alternatively, simply create a new partition table (GPT for large disks) and create one partition in it (use default values for number, sector start/end)
 ```
 g
@@ -57,6 +51,14 @@ n
 p
 w
 ```
+
+Format the new partition and label it
+
+In the code below, replace ```/dev/sd?``` by what you used above and ```d?``` is what you identified in the first section. THIS STEP ERASES WHATEVER HAS BEEN ON THIS PARTITION BEFORE!
+
+```sudo mkfs.ext4 /dev/sd?1 -L /d?```
+
+
 
 
 ## For all drives
