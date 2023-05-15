@@ -8,7 +8,7 @@ This section is for new hard drives containing no data. If your drive already ha
 
 By convention, we label our drive d? where ? is an incrementing counter. To know what is the next number to be used do
 
-cat /etc/auto.ext_drives
+```cat /etc/auto.ext_drives```
 
 ### Create a partition on the drive
 
