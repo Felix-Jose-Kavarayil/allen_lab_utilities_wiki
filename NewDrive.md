@@ -159,7 +159,7 @@ Normally, this should be done automatically overnight.
 ```
 cd ~/repo/allen_lab_utilities/src/shell_scripts/
 ./updateRepos.sh
-sudo ./updateAutoMountExports.sh
+sudo --preserve-env=HOME ./updateAutoMountExports.sh
 ```
 
 ### Set up an automatic backup of your new drive
