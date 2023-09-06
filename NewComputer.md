@@ -423,6 +423,31 @@ sudo rmmod nvidia
 sudo modprobe nvidia
 ```
 
+### install multiple versions of CUDA in parallel
+
+[reference](https://blog.kovalevskyi.com/multiple-version-of-cuda-libraries-on-the-same-machine-b9502d50ae77)
+
+useful commands
+
+```
+sudo sh cuda_12.2.2_535.104.05_linux.run --silent --toolkit --toolkitpath=/usr/local/cuda-12.2
+
+echo $LD_LIBRARY_PATH
+
+cd /usr/local/
+
+sudo update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11 10
+sudo update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.2 20
+sudo update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.5 30
+sudo update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-12.2 50
+
+update-alternatives --query cuda
+
+update-alternatives --get-selections
+
+```
+
+
 
 ## Installing Matlab (dear god!)
 
