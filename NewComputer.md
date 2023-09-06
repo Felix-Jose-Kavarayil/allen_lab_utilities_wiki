@@ -443,7 +443,11 @@ sudo update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-12.2 50
 
 update-alternatives --query cuda
 
-update-alternatives --get-selections
+update-alternatives --config cuda
+
+update-alternatives --get-selections | grep cuda
+
+nvcc --version
 
 ```
 
