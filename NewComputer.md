@@ -606,4 +606,11 @@ sudo systemctl start chrony.service
 sudo systemctl restart chrony.service
 ```
 
+You can test whether a computer is synchronized using 
+
+```
+chronyc tracking
+```
+Make sure that the computers that needs to be synchronized connect to the same server.
+
 [DKFZ NTP time server](https://itcfwiki.inet.dkfz-heidelberg.de/itcfwiki/index.php/Zeitserver) file `/etc/ntp.conf`
