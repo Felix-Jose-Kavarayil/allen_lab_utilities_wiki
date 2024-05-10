@@ -306,6 +306,11 @@ Follow [instructions](https://stackoverflow.com/a/3452888) to update all package
 pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
 ```
 
+for ubuntu 22.04:
+```
+pip --disable-pip-version-check list --outdated --format=json | python -c "import json, sys; print('\n'.join([x['name'] for x in json.load(sys.stdin)]))" | xargs -n1 pip install -U
+```
+
 
 ## install phy
 It is useful to have this installed on the computer where the data is stored, so that with remote graphical access it can be much faster
