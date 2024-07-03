@@ -456,6 +456,28 @@ nvcc --version
 
 ```
 
+example output for a running cuda environment
+```
+(base) tyy@a230-pc59:/usr/local$ file cuda*
+cuda:      symbolic link to cuda-12
+cuda-11.1: directory
+cuda-12:   symbolic link to /etc/alternatives/cuda-12
+cuda-12.3: directory
+(base) tyy@a230-pc59:/usr/local$ du -sh cuda*
+0	cuda
+7,9G	cuda-11.1
+0	cuda-12
+11G	cuda-12.3
+(base) tyy@a230-pc59:/usr/local$ update-alternatives --query cuda
+Name: cuda
+Link: /usr/local/cuda
+Status: auto
+Best: /usr/local/cuda-12.3
+Value: /usr/local/cuda-12.3
+
+Alternative: /usr/local/cuda-12.3
+Priority: 123
+```
 
 
 ## Installing Matlab (dear god!)
