@@ -30,9 +30,36 @@ To have access to internet in Firefox, go to Preferences, Advance, Network, Sett
 
 You should have access to internet now. If this is not the case, you need to sort this out before going to the next steps.
 
-### General via gui
+### Setting system proxy
 
-Go to system settings/network/network-proxy and add ```www-int2.inet.dkfz-heidelberg.de 80``` to the http and https proxy line.
+Add the following lines to `/etc/environment`
+
+
+```
+nano /etc/environment
+```
+
+Add these lines
+
+```
+############################## DKFZ-Proxy Conf ##########################################
+proxy=http://www-int2.dkfz-heidelberg.de:3128
+http_proxy=http://www-int2.dkfz-heidelberg.de:3128
+https_proxy=http://www-int2.dkfz-heidelberg.de:3128
+ftp_proxy=http://www-int2.dkfz-heidelberg.de:3128
+ftps_proxy=http://www-int2.dkfz-heidelberg.de:3128
+sftp_proxy=http://www-int2.dkfz-heidelberg.de:3128
+HTTP_PROXY=http://www-int2.dkfz-heidelberg.de:3128
+HTTPS_PROXY=http://www-int2.dkfz-heidelberg.de:3128
+FTP_PROXY=http://www-int2.dkfz-heidelberg.de:3128
+FTPS_PROXY=http://www-int2.dkfz-heidelberg.de:3128
+no_proxy=localhost,127.0.0.1,10.0.0.0/8,192.168.0.0/16,172.16.0.0/12,dkfz-heidelberg.de,dkfz.de
+NO_PROXY=localhost,127.0.0.1,10.0.0.0/8,192.168.0.0/16,172.16.0.0/12,dkfz-heidelberg.de,dkfz.de
+#########################################################################################
+```
+
+Reboot your system. 
+
 
 ### Check proxy settings
 Check using
