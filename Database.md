@@ -16,3 +16,33 @@ These directories will appear on each computer because auto.mount will mount the
 
 ## Update or set symbolic link of mouse data manually
 In `/adata/electro`, run `ln -sfn /ext_drives/dXX/data/electro/xy1234 xy1234` where dXX is the disk and xy1234 is the mouse name. Check with `ll /adata/electro` to list all destinations of symbol link or `realpath .` in the appropriate folder.
+
+## have different hard drives (HDDs) for one mouse
+
+* normally: server has one symbolic link per mouse -> one HDD for its data
+* this approach: server has one folder for mouse containing symbolic links to sessions -> arbitrary number of HDDs for sessions, can be distributed on several HDDs
+
+1. on the server:
+
+```
+cd /adata/electro
+mkdir pk12345
+chmod g+w pk12345
+cd pk12345
+realpath .
+# will output "/adata/electro/pk12345"
+```
+
+2. on each HDD, navigate to mouse folder containing sessions
+
+```
+cd /ext_drives/d90/data/electro/pk12345
+
+sessions_on_this_hdd=$(ls -1 | grep -v "__")
+echo $sessions_on_this_hdd
+
+work_dir=$(pwd)
+echo $work_dir
+
+for ses in $sessions_on_this_hdd; do echo "Session: $ses"; ln -svn "${work_dir}/${ses}" /adata/electro/pk12345/${ses}; done
+```
