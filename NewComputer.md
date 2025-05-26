@@ -105,6 +105,16 @@ Acquire::ftp::proxy "ftp://www-int2.inet.dkfz-heidelberg.de:80/";
 
 Notice that the `https::proxy` is set to `http:` address.
 
+
+
+## Make sure your system is up-to-date
+
+```
+sudo apt-get update
+sudo apt-get upgrade
+```
+
+
 ## Install git and automake
 
 ```
